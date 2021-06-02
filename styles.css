@@ -1,0 +1,287 @@
+/* text specifications */
+h1 {
+	font-size: 96px;
+	font-family: "Poppins", sans-serif;
+	font-weight: 700;
+}
+
+ul {
+	list-style-type: none;
+	min-height: 110px;
+	width: 400px;
+}
+
+#descriptors li {
+	font-weight: 400;
+	font-size: 36px;
+	opacity: 0.6;
+	line-height: 1.55;
+}
+
+h2 {
+	font-size: 40px;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+li,
+p,
+label {
+	color: #424b54;
+	font-family: "Poppins", sans-serif;
+}
+
+/* Info Cards */
+.info-card,
+.alt-info-card {
+	display: flex;
+	padding: 30px;
+	flex-direction: column;
+	border-radius: 67px;
+	justify-content: space-around;
+	max-width: 350px;
+	height: auto;
+}
+
+.info-card {
+	background-color: #456990;
+}
+
+.alt-info-card {
+	background-color: #ff7277;
+}
+
+.info-card > h3,
+alt-info-card > h3 {
+	text-align: center;
+}
+
+.info-card > h1,
+.info-card > h2,
+.info-card > h3,
+.info-card > h4,
+.info-card > h5,
+.info-card > p,
+.alt-info-card > h1,
+.alt-info-card > h2,
+.alt-info-card > h3,
+.alt-info-card > h4,
+.alt-info-card > h5,
+.alt-info-card > p,
+.alt-info-card * label {
+	color: white;
+	line-height: 2em;
+}
+
+/* Hide Scrollbar */
+/* Hide scrollbar for Chrome, Safari and Opera */
+html::-webkit-scrollbar {
+	display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+html {
+	-ms-overflow-style: none; /* IE and Edge */
+	scrollbar-width: none; /* Firefox */
+}
+
+/* Title Section */
+html {
+	height: 460vh;
+	overflow-x: hidden;
+}
+body {
+	height: 100%;
+}
+main {
+	height: 100%;
+}
+#intro {
+	display: grid;
+	position: relative;
+	justify-content: space-evenly;
+	margin-top: 10vh;
+
+	margin-left: 20vw;
+	margin-right: 20vw;
+	grid-gap: 5%;
+	height: 90vh;
+	width: 60vw;
+}
+#intro #name {
+	grid-row: 1;
+	width: 60%;
+}
+#intro #name {
+	grid-row: 1;
+	grid-column: 1;
+	margin: auto;
+}
+
+#intro #descriptors {
+	grid-row: 1;
+	grid-column: 3;
+	margin: auto;
+}
+
+#intro #contact-me-button-container {
+	grid-row: 2;
+	grid-column: 2;
+}
+
+/* menu */
+
+#menu-button {
+	position: fixed;
+	top: 5%;
+	left: 90%;
+	/* right: 5%; */
+	z-index: 10;
+}
+
+#menu-text * {
+	z-index: 20;
+}
+
+#expanded-menu-button {
+	visibility: hidden;
+	position: absolute;
+}
+
+/* Projects Section */
+.section-title {
+	text-decoration: underline;
+}
+
+#projects {
+	height: 80vh;
+	position: relative;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+
+#projects #projects-flex-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: flex-start;
+	margin-right: 10vw;
+	margin-left: 10vw;
+}
+
+#projects-title {
+	margin-top: 0;
+}
+
+#timeline-container {
+	margin-top: 15vh;
+	margin-left: 0;
+	margin-right: 0;
+	width: 100vw;
+}
+
+#timeline-content {
+	/* left: 50%; */
+	transform: translateX(50%);
+	/* margin-left: 50%; */
+}
+
+/* Skills Section */
+#skills {
+	position: relative;
+	height: 100vh;
+}
+
+#skills-title {
+	position: relative;
+	left: 35vw;
+	top: 10vh;
+}
+
+#skill-wheel {
+	position: relative;
+	left: 0;
+	top: 0;
+	transform: translateX(-50%);
+}
+
+#skill-info {
+	/* position: relative; */
+	position: absolute;
+	right: 15vw;
+	top: 50vh;
+	transform: translateY(-50%);
+}
+
+/* Experience Section */
+#experience {
+	height: 90vh;
+	width: 100vw;
+	position: relative;
+	align-items: center;
+}
+
+#experience-flex-container {
+	display: flex;
+	width: 100vw;
+	flex-direction: row;
+	justify-content: center;
+	top: 20vh;
+	position: absolute;
+}
+
+#experience-flex-container > svg {
+	margin: 5vw;
+}
+
+#experience-title {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	top: 0vh;
+}
+
+/* Contact Section */
+#contact {
+	align-items: center;
+	justify-content: space-around;
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+}
+
+#contact-me-form-container {
+	min-width: 500px;
+	/* height: 500px; */
+}
+
+#contact-me-form {
+	padding: 20px;
+	/* justify-content: space-around; */
+}
+
+#contact-me-form textarea {
+	width: 100%;
+	resize: none;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	box-sizing: border-box;
+	font-size: 20px;
+	font-family: "Poppins", sans-serif;
+	margin: 1px;
+}
