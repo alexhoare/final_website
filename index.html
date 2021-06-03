@@ -54,6 +54,10 @@
 					height="10.547"
 					transform="translate(1745.645 165.814)"
 					fill="#fff"
+					onmouseover="illuminateMenuBar(4)"
+					onmouseout="deilluminateMenuBar(4)"
+					onclick="location.href = '#contact'"
+					style="cursor: pointer"
 				/>
 				<rect
 					id="bar3"
@@ -61,6 +65,10 @@
 					height="10.547"
 					transform="translate(1745.645 150.427)"
 					fill="#fff"
+					onmouseover="illuminateMenuBar(3)"
+					onmouseout="deilluminateMenuBar(3)"
+					onclick="location.href = '#experience'"
+					style="cursor: pointer"
 				/>
 				<rect
 					id="bar2"
@@ -68,6 +76,10 @@
 					height="10.547"
 					transform="translate(1745.645 135.04)"
 					fill="#fff"
+					onmouseenter="illuminateMenuBar(2)"
+					onmouseleave="deilluminateMenuBar(2)"
+					onclick="location.href = '#skills'"
+					style="cursor: pointer"
 				/>
 				<rect
 					id="bar1"
@@ -75,6 +87,10 @@
 					height="10.547"
 					transform="translate(1745.645 119.653)"
 					fill="#fff"
+					onmouseenter="illuminateMenuBar(1)"
+					onmouseleave="deilluminateMenuBar(1)"
+					onclick="location.href = '#projects'"
+					style="cursor: pointer"
 				/>
 			</g>
 		</svg>
@@ -1313,6 +1329,16 @@
 							<tspan x="0" y="144">development process</tspan>
 						</text>
 					</svg>
+					<!-- <div id="experience-2019" class="experience-info-card">
+						<h2>Concurrent EDA</h2>
+						<h3>Summer of 2019</h3>
+						<p>
+							During this summer, I worked on the quote generator
+							I mentioned above in the "My Projects" section.
+							During this time, I learned a lot about good
+							engineering practices, and effective time usage.
+						</p>
+					</div> -->
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						width="386"
@@ -1430,6 +1456,7 @@
 						onmouseenter="expandSubmitFormButton()"
 						onmouseleave="shrinkSubmitFormButton()"
 						onclick="submitForm(); pressSubmitFormButton(); releaseSubmitFormButton();"
+						style="cursor: pointer"
 					>
 						<g transform="translate(-791.914 -763.723)">
 							<rect

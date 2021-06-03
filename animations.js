@@ -1,5 +1,7 @@
 gsap.registerPlugin(ScrollTrigger, TextPlugin, MorphSVGPlugin);
 
+let macroTL = undefined;
+
 window.onload = function () {
 	MorphSVGPlugin.convertToPath(
 		"circle, rect, ellipse, line, polygon, polyline"
@@ -7,6 +9,7 @@ window.onload = function () {
 	animateTimeline();
 	animateSkillWheel();
 	cycleThroughDescriptors();
+	// macroTL = gsap.tl();
 };
 
 let descriptors = [
@@ -227,24 +230,47 @@ function shrinkContactMe() {
 	});
 }
 
-function expandMenuButton() {
-	tl = gsap.timeline();
-	tl.to("#containing-rect", {
-		morphSVG: "#expanded-containing-rect",
-		duration: 2,
+function illuminateMenuBar(barNumber) {
+	let barSelector = "#bar" + barNumber;
+	gsap.to(barSelector, {
+		attr: {
+			fill: "#ff7277",
+		},
+		duration: 0.1,
+	});
+	for (let i = 1; i <= 4; i++) {
+		if (i == barNumber) {
+			continue;
+		}
+
+		gsap.to("#bar" + i, {
+			attr: {
+				fill: "#fff",
+			},
+			duration: 0.1,
+		});
+	}
+}
+
+function deilluminateMenuBar(barNumber) {
+	let barSelector = "#bar" + barNumber;
+	gsap.to(barSelector, {
+		attr: {
+			fill: "#fff",
+		},
+		duration: 0.1,
 	});
 }
 
 function expandMenuButton() {
 	gsap.to("#containing-rect", {
 		morphSVG: "#expanded-containing-rect",
-		duration: 0.5,
+		duration: 0.2,
 	});
 	gsap.to("#menu-button", {
 		x: -182,
-		duration: 0.5,
+		duration: 0.2,
 	});
-	tl = gsap.timeline();
 	let options = [
 		"#menu-projects",
 		"#menu-skills",
@@ -253,14 +279,18 @@ function expandMenuButton() {
 	];
 	for (let i = 1; i <= 4; i++) {
 		let newY = "" + i * 70;
-		gsap.to("#bar" + i, {
+		gsap.globalTimeline.to("#bar" + i, {
 			y: "+=" + newY,
-			duration: 0.5,
+			duration: 0.1,
+			// delay: -0.5 * (i - 1),
 		});
-		tl.to("#bar" + i, {
+	}
+	for (let i = 1; i <= 4; i++) {
+		gsap.globalTimeline.to("#bar" + i, {
 			morphSVG: options[i - 1],
 			// transform: "translateY(100px)",
 			duration: 0.2,
+			// delay: 0.1 * i,
 		});
 	}
 }
@@ -268,13 +298,12 @@ function expandMenuButton() {
 function shrinkMenuButton() {
 	gsap.to("#containing-rect", {
 		morphSVG: "#containing-rect",
-		duration: 0.5,
+		duration: 0.2,
 	});
 	gsap.to("#menu-button", {
 		x: 0,
-		duration: 0.5,
+		duration: 0.2,
 	});
-	tl = gsap.timeline();
 	let options = [
 		"#menu-projects",
 		"#menu-skills",
@@ -282,109 +311,17 @@ function shrinkMenuButton() {
 		"#menu-contact",
 	];
 	for (let i = 1; i <= 4; i++) {
-		let newY = "" + i * 70;
-		tl.to("#bar" + i, {
-			y: "-=" + newY,
+		gsap.globalTimeline.to("#bar" + i, {
+			morphSVG: "#bar" + i,
 			duration: 0.1,
 		});
-		gsap.to("#bar" + i, {
-			morphSVG: "#bar" + i,
-			duration: 0.2,
+	}
+	for (let i = 1; i <= 4; i++) {
+		let newY = "" + i * 70;
+		gsap.globalTimeline.to("#bar" + i, {
+			y: "-=" + newY,
+			duration: 0.05,
+			// delay: 0.1 * i,
 		});
 	}
 }
-
-// function shrinkMenuButton() {
-// 	let menuButtonSelector = "#menu-button";
-// 	let isExpanded =
-// 		document.getElementById("containing-rect").getAttribute("width") ==
-// 		"310";
-// 	let windowWidth = window.innerWidth;
-// 	let animationDuration = 0.3;
-
-// 	gsap.to("#containing-rect", {
-// 		attr: { width: 130.96, height: 111.15 },
-// 		duration: animationDuration,
-// 	});
-
-// 	let newX = document.getElementById("menu-button").getAttribute("x"); // + 310;
-// 	gsap.to(menuButtonSelector, { x: newX, duration: animationDuration });
-
-// 	let height = 130.96,
-// 		width = 111.15;
-// 	// let padding = 113.65 - 86.43,
-// 	let padding = 1.0,
-// 		newBarHeight = 10.55,
-// 		newBarWidth = 50.63,
-// 		barSpacing = 0.3;
-// 	// barSpacing = 129.04 - 113.65;
-// 	let usableHeight = height - padding * 2 - newBarHeight;
-// for (let i = 1; i <= 4; i++) {
-// 	let barSelector = "#bar" + i;
-// 	gsap.to(barSelector, {
-// 		attr: {
-// 			y: 0,
-// 			width: newBarWidth,
-// 			height: newBarHeight,
-// 		},
-// 		duration: animationDuration,
-// 	});
-// }
-// }
-
-// function expandMenuButton() {
-// 	console.log("animating menu button");
-// 	let menuButtonSelector = "#menu-button";
-// 	let isExpanded =
-// 		document.getElementById("containing-rect").getAttribute("width") ==
-// 		"310";
-// 	let windowWidth = window.innerWidth;
-
-// 	let animationDuration = 0.3;
-
-// 	gsap.to("#containing-rect", {
-// 		attr: { width: 310, height: 420 },
-// 		duration: animationDuration,
-// 	});
-// 	let newX =
-// 		document.getElementById("menu-button").getAttribute("x") -
-// 		(310 - 130.96);
-
-// 	gsap.to(menuButtonSelector, { x: newX, duration: animationDuration });
-
-// 	let height = 420,
-// 		width = 310;
-// 	let padding = 40,
-// 		newBarHeight = 30;
-// 	let usableHeight = height - padding * 2 - newBarHeight;
-// for (let i = 1; i <= 4; i++) {
-// 	let newY = (i - 1) * (usableHeight / 4) + padding - newBarHeight / 2.0;
-// 	let barSelector = "#bar" + i;
-// 	gsap.to(barSelector, {
-// 		attr: {
-// 			y: newY,
-// 			width: 310 - padding * 2,
-// 			height: newBarHeight,
-// 		},
-// 		duration: animationDuration,
-// 	});
-// }
-// 	for (let i = 1; i <= 4; i++) {
-// 		let newY = (i - 1) * (usableHeight / 4) + padding - newBarHeight / 2.0;
-// 		let barSelector = "#bar" + i;
-// 		gsap.to(barSelector, {
-// 			attr: {
-// 				y: newY,
-// 				width: 310 - padding * 2,
-// 				height: newBarHeight,
-// 			},
-// 			duration: animationDuration,
-// 		});
-// 	}
-// 	// MorphSVGPlugin.convertToPath("#bar1, #menu-projects");
-// 	gsap.to("#bar1", {
-// 		duration: 1,
-// 		delay: 1,
-// 		morphSVG: "#menu-projects",
-// 	});
-// }

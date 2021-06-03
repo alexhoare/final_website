@@ -67,7 +67,12 @@ function updateSkillInfoCard(skillIndex) {
 
 	let resourcesHTML = "Links to books and resources:";
 	for (let i = 0; i < skill.resources.length; i++) {
-		resourcesHTML += "<br>" + skill.resources[i];
+		resourcesHTML +=
+			'<br><a href="' +
+			skill.resources[i] +
+			'">' +
+			skill.resources[i] +
+			"</a>";
 	}
 	resources.innerHTML = resourcesHTML;
 }
@@ -82,43 +87,51 @@ let projectInfo = [
 	},
 	{
 		name: "N-Queens Solver",
-		description: "",
+		description:
+			"This was my first project in c++ that I made in my free time. It served as a useful introduction to recursive backtracking, and it demonstrated that you can solve complex problems with computers.",
 		sourceCode: "",
 		gifUrl: "",
 	},
 	{
 		name: "Sudoku Solver",
-		description: "",
+		description:
+			"I was inspired to make this project when my younger sister became very interested in sudoku. At the time I thought it was very impressive, but it lacked a good way for the user to upload a puzzle.",
 		sourceCode: "",
 		gifUrl: "",
 	},
 	{
 		name: "Snake",
-		description: "",
+		description:
+			"This was the very first game that I created. It gave me a good introduction to user input, graphics, framerates, and game logic. After completing this, I spent a while playing and improving it.",
 		sourceCode: "",
 		gifUrl: "",
 	},
 	{
 		name: "Snake V2",
-		description: "",
+		description:
+			"This was an improvement on my previous snake game, and I made it as my final project in my Computer Science B course. It featured fancy graphics that I created using Qt with C++, which I learned for the project.",
 		sourceCode: "",
 		gifUrl: "",
 	},
 	{
 		name: "Quote Generator",
-		description: "",
+		description:
+			"This is a program I created with Qt and C++ for Concurrent EDA to accept user input and create a quote as a pdf. This project took a whole summer because my boss introduced it as a web scraper and slowly morphed it into whatever this is. Thanks, Dad!",
 		sourceCode: "",
 		gifUrl: "",
 	},
 	{
-		name: "Gift Wrapping",
-		description: "",
-		sourceCode: "",
+		name: "Gift Wrapping Simulator",
+		description:
+			"This is a midyear project I created for AP Computer Science using the CMU Graphics Library. We were given three days to create a Christmas themed program, and it was a competition for bonus points. I ended up winning the class competition, cementing my role as the 'king of the nerds'.",
+		sourceCode:
+			"https://academy.cs.cmu.edu/sharing/royalBlueChimpanzee6119",
 		gifUrl: "",
 	},
 	{
 		name: "Rotoscoper",
-		description: "",
+		description:
+			"This was my final project for AP Computer Science that used CUDA and OpenCV to turn pictures into a more cartoony version of themselves. I made it with OpenCV and later optimized it with CUDA to make it run in real time.",
 		sourceCode: "",
 		gifUrl: "",
 	},
@@ -135,7 +148,7 @@ let projectInfo = [
 		gifUrl: "",
 	},
 	{
-		name: "Gaze Detection",
+		name: "Face Doodle",
 		description: "",
 		sourceCode: "",
 		gifUrl: "",
@@ -164,8 +177,16 @@ function updateTimelineInfoCard(projectIndex) {
 
 	description.innerHTML = project.description;
 
-	let sourceCodeHTML = "Source Code:<br>";
-	if (project.sourceCode.length > 0) {
-		sourceCode.innerHTML = sourceCodeHTML + project.sourceCode;
-	}
+	// let sourceCodeHTML = "Link to Program:<br>";
+	// if (project.sourceCode.length > 0) {
+	// sourceCodeHTML +=
+	// 	'<br><a href="' +
+	// 	project.sourceCode +
+	// 	'">' +
+	// 	project.sourceCode +
+	// 	"</a>";
+	// sourceCode.innerHTML = sourceCodeHTML;
+	// } else {
+	sourceCode.innerHTML = "";
+	// }
 }
