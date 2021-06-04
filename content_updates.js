@@ -3,49 +3,52 @@ const skillInfo = [
 		name: "C++",
 		description:
 			"C++ was the second programming language that I had learned, and it is the one that I favor the most today. It's speed and versatility was very appealing. I now use it most often for programming competitions.",
-		resources: ["www.google.com"],
+		resources: [
+			"https://www.amazon.com/Sams-Teach-Yourself-One-Hour/dp/0672335670",
+			"http://cplusplus.com",
+		],
 	},
 	{
 		name: "Java",
 		description:
-			"C++ description goes here. Here is some background information about this skill. I learned this skill at this point in time and it has been very useful for my development as a programmer.",
-		resources: ["www.google.com"],
+			"I learned Java in AP Computer Science. I've created countless console applications and played around with databases in this language.",
+		resources: ["https://docs.oracle.com/en/java/"],
 	},
 	{
 		name: "Python",
 		description:
-			"C++ description goes here. Here is some background information about this skill. I learned this skill at this point in time and it has been very useful for my development as a programmer.",
-		resources: ["www.google.com"],
+			"Over time, I've become fonder towards Python because of its endless capabilities and robustness. It was the first language I learned and is my favorite. My only gripe is that it is not statically typed, and that's sacrilegious.",
+		resources: ["https://www.python.org/"],
 	},
 	{
 		name: "Qt/QML",
 		description:
-			"C++ description goes here. Here is some background information about this skill. I learned this skill at this point in time and it has been very useful for my development as a programmer.",
-		resources: ["www.google.com"],
+			"Qt is my go-to for developing GUIs for a desktop application. Its event system is very intuitive, and you are able to separate the front end and back end by using QML, something not too common with GUI frameworks.",
+		resources: ["https://doc.qt.io/"],
 	},
 	{
 		name: "OpenCV",
 		description:
-			"C++ description goes here. Here is some background information about this skill. I learned this skill at this point in time and it has been very useful for my development as a programmer.",
-		resources: ["www.google.com"],
+			"Any computer vision application I've created has used OpenCV in some form. It is compatible with C++ and Python, but I have struggled to find good documentation for the Python version in the past.",
+		resources: ["https://docs.opencv.org/master/"],
 	},
 	{
 		name: "CUDA",
 		description:
-			"C++ description goes here. Here is some background information about this skill. I learned this skill at this point in time and it has been very useful for my development as a programmer.",
-		resources: ["www.google.com"],
+			"I used CUDA for my real-time rotoscoper in 11th grade. It allowed me to make the program twice as fast, and it introduced me to concurrent algorithms. I've found it easy to use if you already have good knowledge of C.",
+		resources: ["https://docs.nvidia.com/cuda/"],
 	},
 	{
 		name: "HTML",
 		description:
-			"C++ description goes here. Here is some background information about this skill. I learned this skill at this point in time and it has been very useful for my development as a programmer.",
-		resources: ["www.google.com"],
+			"Of course, every website almost every website uses HTML, and, if it's not, there is something converted into HTML. I've made a couple websites since I started programming, all using HTML.",
+		resources: ["https://www.w3schools.com/html/"],
 	},
 	{
 		name: "Javascript",
 		description:
-			"C++ description goes here. Here is some background information about this skill. I learned this skill at this point in time and it has been very useful for my development as a programmer.",
-		resources: ["www.google.com"],
+			"Knowing Javascript is imperative if you want to make your website interactive. I would like to learn Typescript in the future, but Javascript does just fine for any relatively small website.",
+		resources: ["https://www.w3schools.com/js/"],
 	},
 ];
 
@@ -68,7 +71,7 @@ function updateSkillInfoCard(skillIndex) {
 	let resourcesHTML = "Links to books and resources:";
 	for (let i = 0; i < skill.resources.length; i++) {
 		resourcesHTML +=
-			'<br><a href="' +
+			'<br><a target="_blank" href="' +
 			skill.resources[i] +
 			'">' +
 			skill.resources[i] +
@@ -124,8 +127,7 @@ let projectInfo = [
 		name: "Gift Wrapping Simulator",
 		description:
 			"This is a midyear project I created for AP Computer Science using the CMU Graphics Library. We were given three days to create a Christmas themed program, and it was a competition for bonus points. I ended up winning the class competition, cementing my role as the 'king of the nerds'.",
-		sourceCode:
-			"https://academy.cs.cmu.edu/sharing/royalBlueChimpanzee6119",
+		sourceCode: "https://academy.cs.cmu.edu/sharing/royalBlueChimpanzee6119",
 		gifUrl: "",
 	},
 	{
@@ -137,13 +139,15 @@ let projectInfo = [
 	},
 	{
 		name: "Blob Detection",
-		description: "",
+		description:
+			"I created this during my second summer at Concurrent EDA. It is an algorithm to find groups of connected pixels in a compressed binary image, and it runs with quadratic complexity.",
 		sourceCode: "",
 		gifUrl: "",
 	},
 	{
 		name: "Mario Kart",
-		description: "",
+		description:
+			"This was my semester project for my Computer Science C course. It was made using pygame and pyopengl, where the player would drive around the course.",
 		sourceCode: "",
 		gifUrl: "",
 	},

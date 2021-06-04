@@ -1,15 +1,10 @@
 gsap.registerPlugin(ScrollTrigger, TextPlugin, MorphSVGPlugin);
 
-let macroTL = undefined;
-
 window.onload = function () {
-	MorphSVGPlugin.convertToPath(
-		"circle, rect, ellipse, line, polygon, polyline"
-	);
+	MorphSVGPlugin.convertToPath("rect");
 	animateTimeline();
 	animateSkillWheel();
 	cycleThroughDescriptors();
-	// macroTL = gsap.tl();
 };
 
 let descriptors = [
@@ -27,8 +22,7 @@ function cycleThroughDescriptors() {
 	console.log(document.getElementById("current-descriptor"));
 	while (descriptorIndex < descriptors.length) {
 		let smallTL = gsap.timeline({ repeat: 1, yoyo: true, repeatDelay: 1 });
-		let newDescriptor =
-			descriptors[descriptorIndex % descriptors.length] + ".";
+		let newDescriptor = descriptors[descriptorIndex % descriptors.length] + ".";
 		smallTL.to("#current-descriptor", {
 			text: newDescriptor,
 			duration: newDescriptor.length * 0.07,
@@ -50,8 +44,8 @@ function animateTimeline() {
 		x: -3430,
 		ease: "none",
 		scrollTrigger: {
-			trigger: "#skills",
-			start: "top bottom",
+			trigger: "#projects",
+			start: "top top",
 			// end: "bottom top",
 			end: 7000,
 			scrub: 1,
@@ -267,9 +261,10 @@ function expandMenuButton() {
 		morphSVG: "#expanded-containing-rect",
 		duration: 0.2,
 	});
-	gsap.to("#menu-button", {
+	gsap.globalTimeline.to("#menu-button", {
 		x: -182,
 		duration: 0.2,
+		delay: -0.2,
 	});
 	let options = [
 		"#menu-projects",
@@ -300,9 +295,10 @@ function shrinkMenuButton() {
 		morphSVG: "#containing-rect",
 		duration: 0.2,
 	});
-	gsap.to("#menu-button", {
+	gsap.globalTimeline.to("#menu-button", {
 		x: 0,
 		duration: 0.2,
+		delay: -0.2,
 	});
 	let options = [
 		"#menu-projects",
