@@ -70,8 +70,9 @@ alt-info-card > h3 {
 }
 
 .experience-info-card {
-	max-height: 500px;
 	border-radius: 67px;
+	height: 30vw;
+	width: auto;
 	background-color: #456990;
 }
 
@@ -314,4 +315,11 @@ textarea {
 	font-size: 20px;
 	font-family: "Poppins", sans-serif;
 	margin: 1px;
+}
+
+#submit-form-button {
+	width: 80%;
+	height: auto;
+	margin-left: 50%;
+	transform: translateX(-50%);
 }

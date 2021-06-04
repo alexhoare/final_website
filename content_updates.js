@@ -127,7 +127,8 @@ let projectInfo = [
 		name: "Gift Wrapping Simulator",
 		description:
 			"This is a midyear project I created for AP Computer Science using the CMU Graphics Library. We were given three days to create a Christmas themed program, and it was a competition for bonus points. I ended up winning the class competition, cementing my role as the 'king of the nerds'.",
-		sourceCode: "https://academy.cs.cmu.edu/sharing/royalBlueChimpanzee6119",
+		sourceCode:
+			"https://academy.cs.cmu.edu/sharing/royalBlueChimpanzee6119",
 		gifUrl: "",
 	},
 	{
@@ -153,13 +154,15 @@ let projectInfo = [
 	},
 	{
 		name: "Face Doodle",
-		description: "",
+		description:
+			"This is my final project for my Computer Science C course. It is a program that takes in a doodle of a face, locates the eyes, nose, and mouth, and maps them to your facial landmarks. In laymen's terms, it makes your doodle move with your face in real time.",
 		sourceCode: "",
 		gifUrl: "",
 	},
 	{
 		name: "This Website",
-		description: "",
+		description:
+			"Your looking at it! I made this website with HTML, CSS, Javascript, and the wonderful Greensock Animation Platform. It has been very fun building this, even with its bugs. I'm not sure if I actually want to freelance, so, if you're an employer, please use the contact me section and I will respond as soon as I possibly can.",
 		sourceCode: "",
 		gifUrl: "",
 	},
