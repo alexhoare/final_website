@@ -1,0 +1,1416 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Alex Hoare</title>
+		<link href="styles.css" rel="stylesheet" type="text/css" />
+
+		<!-- Include GSAP Core and Plugins -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/TextPlugin.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/ScrollTrigger.min.js"></script>
+		<script src="./MorphSVGPlugin.min.js"></script>
+
+		<!-- Custom Code -->
+		<script src="./animations.js"></script>
+		<script src="./content_updates.js"></script>
+		<script src="./form.js"></script>
+
+		<!-- Include Poppins Font -->
+		<link rel="preconnect" href="https://fonts.gstatic.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+			rel="stylesheet"
+		/>
+	</head>
+
+	<body>
+		<svg
+			id="menu-button"
+			xmlns="http://www.w3.org/2000/svg"
+			width="310"
+			height="420"
+			viewBox="0 0 310 420"
+		>
+			<g
+				id="menu-button-group"
+				data-name="Menu Button"
+				transform="translate(-1705.477 -92.43)"
+				onmouseenter="expandMenuButton()"
+				onmouseleave="shrinkMenuButton()"
+			>
+				<rect
+					id="containing-rect"
+					width="130.962"
+					height="111.154"
+					rx="43"
+					transform="translate(1705.477 92.43)"
+					fill="#456990"
+				/>
+				<rect
+					id="bar4"
+					width="50.625"
+					height="10.547"
+					transform="translate(1745.645 165.814)"
+					fill="#fff"
+					onmouseover="illuminateMenuBar(4)"
+					onmouseout="deilluminateMenuBar(4)"
+					onclick="location.href = '#contact'"
+					style="cursor: pointer"
+				/>
+				<rect
+					id="bar3"
+					width="50.625"
+					height="10.547"
+					transform="translate(1745.645 150.427)"
+					fill="#fff"
+					onmouseover="illuminateMenuBar(3)"
+					onmouseout="deilluminateMenuBar(3)"
+					onclick="location.href = '#experience'"
+					style="cursor: pointer"
+				/>
+				<rect
+					id="bar2"
+					width="50.625"
+					height="10.547"
+					transform="translate(1745.645 135.04)"
+					fill="#fff"
+					onmouseenter="illuminateMenuBar(2)"
+					onmouseleave="deilluminateMenuBar(2)"
+					onclick="location.href = '#skills'"
+					style="cursor: pointer"
+				/>
+				<rect
+					id="bar1"
+					width="50.625"
+					height="10.547"
+					transform="translate(1745.645 119.653)"
+					fill="#fff"
+					onmouseenter="illuminateMenuBar(1)"
+					onmouseleave="deilluminateMenuBar(1)"
+					onclick="location.href = '#projects'"
+					style="cursor: pointer"
+				/>
+			</g>
+		</svg>
+		<svg
+			id="expanded-menu-button"
+			xmlns="http://www.w3.org/2000/svg"
+			width="311.961"
+			height="422.195"
+			viewBox="0 0 311.961 422.195"
+		>
+			<rect
+				id="expanded-containing-rect"
+				data-name="Rectangle 14"
+				width="311.961"
+				height="422.195"
+				rx="43"
+				fill="#456990"
+			/>
+			<path
+				id="menu-projects"
+				data-name="Path 33"
+				d="M20.2-17.568a7.555,7.555,0,0,1-.9,3.6,6.745,6.745,0,0,1-2.88,2.754,10.69,10.69,0,0,1-5.076,1.062H6.8V0H2.7V-25.02h8.64a10.909,10.909,0,0,1,4.878.99,6.883,6.883,0,0,1,2.988,2.682A7.346,7.346,0,0,1,20.2-17.568ZM11.34-13.5a5,5,0,0,0,3.492-1.062,3.884,3.884,0,0,0,1.152-3.006q0-4.1-4.644-4.1H6.8V-13.5Zm16.884-3.456a6.445,6.445,0,0,1,2.394-2.358,7.081,7.081,0,0,1,3.546-.846v4.248H33.12a5,5,0,0,0-3.654,1.224q-1.242,1.224-1.242,4.248V0h-4.1V-19.836h4.1ZM46.548.324A10.159,10.159,0,0,1,41.472-.954a9.18,9.18,0,0,1-3.564-3.6,10.859,10.859,0,0,1-1.3-5.382A10.651,10.651,0,0,1,37.944-15.3a9.2,9.2,0,0,1,3.636-3.6,10.551,10.551,0,0,1,5.148-1.26,10.551,10.551,0,0,1,5.148,1.26,9.2,9.2,0,0,1,3.636,3.6,10.651,10.651,0,0,1,1.332,5.364,10.43,10.43,0,0,1-1.368,5.364A9.472,9.472,0,0,1,51.75-.954,10.739,10.739,0,0,1,46.548.324Zm0-3.564A6.107,6.107,0,0,0,49.518-4a5.76,5.76,0,0,0,2.25-2.268,7.292,7.292,0,0,0,.864-3.672A7.443,7.443,0,0,0,51.8-13.59a5.59,5.59,0,0,0-2.2-2.25,6.006,6.006,0,0,0-2.952-.756,5.905,5.905,0,0,0-2.934.756,5.4,5.4,0,0,0-2.142,2.25,7.721,7.721,0,0,0-.792,3.654,6.96,6.96,0,0,0,1.638,4.95A5.413,5.413,0,0,0,46.548-3.24ZM63-22.464a2.542,2.542,0,0,1-1.872-.756,2.542,2.542,0,0,1-.756-1.872,2.542,2.542,0,0,1,.756-1.872A2.542,2.542,0,0,1,63-27.72a2.5,2.5,0,0,1,1.836.756,2.542,2.542,0,0,1,.756,1.872,2.542,2.542,0,0,1-.756,1.872A2.5,2.5,0,0,1,63-22.464ZM65.016,3.888a5.44,5.44,0,0,1-1.458,4.23,6.117,6.117,0,0,1-4.23,1.314H57.2V5.976h1.4A2.6,2.6,0,0,0,60.39,5.49a2.107,2.107,0,0,0,.522-1.6V-19.836h4.1ZM88.6-10.4a12.831,12.831,0,0,1-.144,2.016H73.3A5.5,5.5,0,0,0,75.06-4.572a5.568,5.568,0,0,0,3.888,1.44A4.8,4.8,0,0,0,83.628-5.9h4.428A8.935,8.935,0,0,1,84.8-1.422,9.559,9.559,0,0,1,78.948.324,10.131,10.131,0,0,1,73.854-.954a9.093,9.093,0,0,1-3.528-3.6,10.982,10.982,0,0,1-1.278-5.382,11.24,11.24,0,0,1,1.242-5.382A8.735,8.735,0,0,1,73.782-18.9a10.392,10.392,0,0,1,5.166-1.26,10.1,10.1,0,0,1,5,1.224,8.649,8.649,0,0,1,3.42,3.438A10.354,10.354,0,0,1,88.6-10.4Zm-4.284-1.3a4.67,4.67,0,0,0-1.62-3.636A5.792,5.792,0,0,0,78.768-16.7a5.271,5.271,0,0,0-3.636,1.35,5.642,5.642,0,0,0-1.8,3.654ZM91.26-9.936A11.24,11.24,0,0,1,92.5-15.318,8.835,8.835,0,0,1,95.94-18.9a9.945,9.945,0,0,1,5.04-1.26,9.889,9.889,0,0,1,5.958,1.71,8.418,8.418,0,0,1,3.186,4.878H105.7a4.683,4.683,0,0,0-1.728-2.3,5.1,5.1,0,0,0-2.988-.828,4.969,4.969,0,0,0-4.014,1.782,7.539,7.539,0,0,0-1.494,4.986,7.613,7.613,0,0,0,1.494,5,4.948,4.948,0,0,0,4.014,1.8A4.555,4.555,0,0,0,105.7-6.264h4.428a8.865,8.865,0,0,1-3.24,4.806,9.562,9.562,0,0,1-5.9,1.782A9.835,9.835,0,0,1,95.94-.954a8.957,8.957,0,0,1-3.438-3.6A11.24,11.24,0,0,1,91.26-9.936Zm27.756-6.552v10.98a2.107,2.107,0,0,0,.522,1.6,2.6,2.6,0,0,0,1.782.486h2.52V0H120.6a6.245,6.245,0,0,1-4.248-1.3,5.341,5.341,0,0,1-1.476-4.212v-10.98h-2.34v-3.348h2.34v-4.932h4.14v4.932h4.824v3.348ZM134.82.324a9.994,9.994,0,0,1-4.194-.846,7.366,7.366,0,0,1-2.934-2.3,5.743,5.743,0,0,1-1.152-3.258h4.248a2.9,2.9,0,0,0,1.206,2.106,4.379,4.379,0,0,0,2.754.846A4.638,4.638,0,0,0,137.43-3.8a2.01,2.01,0,0,0,.954-1.71,1.756,1.756,0,0,0-1.062-1.656,19.907,19.907,0,0,0-3.366-1.188A32.486,32.486,0,0,1,130.32-9.54a6.374,6.374,0,0,1-2.43-1.764,4.623,4.623,0,0,1-1.026-3.132,4.884,4.884,0,0,1,.936-2.9,6.233,6.233,0,0,1,2.682-2.07,10.021,10.021,0,0,1,4.014-.756,8.289,8.289,0,0,1,5.454,1.71,6.14,6.14,0,0,1,2.214,4.662h-4.1a2.923,2.923,0,0,0-1.08-2.124,4.039,4.039,0,0,0-2.628-.792,4.266,4.266,0,0,0-2.484.612,1.9,1.9,0,0,0-.864,1.62,1.753,1.753,0,0,0,.576,1.332,4.1,4.1,0,0,0,1.4.846q.828.306,2.448.774a26.63,26.63,0,0,1,3.546,1.17A6.6,6.6,0,0,1,141.372-8.6a4.619,4.619,0,0,1,1.044,3.06,5.132,5.132,0,0,1-.936,3.024,6.206,6.206,0,0,1-2.646,2.088A9.859,9.859,0,0,1,134.82.324Z"
+				transform="translate(47.523 106.57)"
+				fill="#fff"
+			/>
+			<path
+				id="menu-skills"
+				data-name="Path 32"
+				d="M10.944.252A11.205,11.205,0,0,1,6.408-.63a7.444,7.444,0,0,1-3.168-2.5,6.354,6.354,0,0,1-1.152-3.78H6.48A3.965,3.965,0,0,0,7.758-4.248,4.53,4.53,0,0,0,10.944-3.2,4.907,4.907,0,0,0,14.256-4.23a3.335,3.335,0,0,0,1.188-2.646,2.89,2.89,0,0,0-.738-2.052,4.937,4.937,0,0,0-1.836-1.224,27.687,27.687,0,0,0-3.042-.936A28.5,28.5,0,0,1,5.85-12.4a6.574,6.574,0,0,1-2.61-2.07,5.982,5.982,0,0,1-1.08-3.744A6.655,6.655,0,0,1,3.24-22,6.9,6.9,0,0,1,6.264-24.48a10.988,10.988,0,0,1,4.5-.864,9.378,9.378,0,0,1,5.958,1.818A6.708,6.708,0,0,1,19.3-18.54H14.76a3.286,3.286,0,0,0-1.3-2.34,4.791,4.791,0,0,0-3.132-.972,4.444,4.444,0,0,0-2.88.9A3.136,3.136,0,0,0,6.336-18.36a2.631,2.631,0,0,0,.7,1.89A4.957,4.957,0,0,0,8.82-15.3a27.664,27.664,0,0,0,2.952.936A30.818,30.818,0,0,1,15.822-13a6.741,6.741,0,0,1,2.664,2.106,6.053,6.053,0,0,1,1.1,3.8,6.829,6.829,0,0,1-1.026,3.6A7.4,7.4,0,0,1,15.57-.774,9.853,9.853,0,0,1,10.944.252ZM32.292-9.9,41.436,0H35.892L28.548-8.532V0h-4.1V-26.64h4.1v15.48l7.2-8.676h5.688ZM46.476-22.464A2.542,2.542,0,0,1,44.6-23.22a2.542,2.542,0,0,1-.756-1.872,2.542,2.542,0,0,1,.756-1.872,2.542,2.542,0,0,1,1.872-.756,2.5,2.5,0,0,1,1.836.756,2.542,2.542,0,0,1,.756,1.872,2.542,2.542,0,0,1-.756,1.872A2.5,2.5,0,0,1,46.476-22.464Zm2.016,2.628V0h-4.1V-19.836Zm9.5-6.8V0h-4.1V-26.64Zm9.5,0V0H63.4V-26.64ZM80.1.324a9.994,9.994,0,0,1-4.194-.846,7.366,7.366,0,0,1-2.934-2.3A5.743,5.743,0,0,1,71.82-6.084h4.248a2.9,2.9,0,0,0,1.206,2.106,4.379,4.379,0,0,0,2.754.846A4.638,4.638,0,0,0,82.71-3.8a2.01,2.01,0,0,0,.954-1.71A1.756,1.756,0,0,0,82.6-7.164a19.907,19.907,0,0,0-3.366-1.188A32.487,32.487,0,0,1,75.6-9.54,6.374,6.374,0,0,1,73.17-11.3a4.623,4.623,0,0,1-1.026-3.132,4.884,4.884,0,0,1,.936-2.9,6.233,6.233,0,0,1,2.682-2.07,10.021,10.021,0,0,1,4.014-.756,8.289,8.289,0,0,1,5.454,1.71,6.14,6.14,0,0,1,2.214,4.662h-4.1a2.923,2.923,0,0,0-1.08-2.124,4.039,4.039,0,0,0-2.628-.792,4.266,4.266,0,0,0-2.484.612,1.9,1.9,0,0,0-.864,1.62,1.753,1.753,0,0,0,.576,1.332,4.1,4.1,0,0,0,1.4.846q.828.306,2.448.774a26.631,26.631,0,0,1,3.546,1.17A6.6,6.6,0,0,1,86.652-8.6,4.619,4.619,0,0,1,87.7-5.544,5.132,5.132,0,0,1,86.76-2.52,6.206,6.206,0,0,1,84.114-.432,9.859,9.859,0,0,1,80.1.324Z"
+				transform="translate(47.523 181.57)"
+				fill="#fff"
+			/>
+			<path
+				id="menu-experience"
+				id="Path_31"
+				data-name="Path 31"
+				d="M6.8-21.708v7.344h8.64v3.348H6.8v7.668h9.72V0H2.7V-25.056H16.524v3.348ZM30.06-10.044,36.468,0H31.824L27.54-6.732,23.508,0H19.224l6.408-9.756-6.408-10.08h4.644L28.152-13.1l4.032-6.732h4.284ZM43.632-16.92a8.34,8.34,0,0,1,2.844-2.3,8.686,8.686,0,0,1,4.068-.936,9.066,9.066,0,0,1,4.734,1.278A8.978,8.978,0,0,1,58.644-15.3a11.109,11.109,0,0,1,1.224,5.292,11.432,11.432,0,0,1-1.224,5.346A9.147,9.147,0,0,1,55.278-.99,8.877,8.877,0,0,1,50.544.324a8.606,8.606,0,0,1-4.032-.918,9.036,9.036,0,0,1-2.88-2.286V9.432h-4.1V-19.836h4.1Zm12.06,6.912a7.081,7.081,0,0,0-.846-3.546,5.8,5.8,0,0,0-2.232-2.268,6,6,0,0,0-2.97-.774,5.824,5.824,0,0,0-2.934.792,5.9,5.9,0,0,0-2.232,2.3,7.183,7.183,0,0,0-.846,3.564,7.285,7.285,0,0,0,.846,3.582A5.868,5.868,0,0,0,46.71-4.032a5.824,5.824,0,0,0,2.934.792,5.789,5.789,0,0,0,2.97-.81,5.969,5.969,0,0,0,2.232-2.358A7.389,7.389,0,0,0,55.692-10.008Zm26.424-.4a12.831,12.831,0,0,1-.144,2.016H66.816A5.5,5.5,0,0,0,68.58-4.572a5.568,5.568,0,0,0,3.888,1.44A4.8,4.8,0,0,0,77.148-5.9h4.428a8.935,8.935,0,0,1-3.258,4.482A9.559,9.559,0,0,1,72.468.324,10.131,10.131,0,0,1,67.374-.954a9.093,9.093,0,0,1-3.528-3.6,10.982,10.982,0,0,1-1.278-5.382,11.24,11.24,0,0,1,1.242-5.382A8.735,8.735,0,0,1,67.3-18.9a10.392,10.392,0,0,1,5.166-1.26,10.1,10.1,0,0,1,5,1.224,8.649,8.649,0,0,1,3.42,3.438A10.354,10.354,0,0,1,82.116-10.4Zm-4.284-1.3a4.67,4.67,0,0,0-1.62-3.636A5.792,5.792,0,0,0,72.288-16.7a5.271,5.271,0,0,0-3.636,1.35,5.642,5.642,0,0,0-1.8,3.654Zm12.42-5.256a6.445,6.445,0,0,1,2.394-2.358,7.081,7.081,0,0,1,3.546-.846v4.248H95.148a5,5,0,0,0-3.654,1.224q-1.242,1.224-1.242,4.248V0h-4.1V-19.836h4.1Zm11.808-5.508a2.542,2.542,0,0,1-1.872-.756,2.542,2.542,0,0,1-.756-1.872,2.542,2.542,0,0,1,.756-1.872,2.542,2.542,0,0,1,1.872-.756,2.5,2.5,0,0,1,1.836.756,2.542,2.542,0,0,1,.756,1.872,2.542,2.542,0,0,1-.756,1.872A2.5,2.5,0,0,1,102.06-22.464Zm2.016,2.628V0h-4.1V-19.836Zm23.58,9.432a12.831,12.831,0,0,1-.144,2.016H112.356a5.5,5.5,0,0,0,1.764,3.816,5.568,5.568,0,0,0,3.888,1.44,4.8,4.8,0,0,0,4.68-2.772h4.428a8.935,8.935,0,0,1-3.258,4.482,9.559,9.559,0,0,1-5.85,1.746,10.131,10.131,0,0,1-5.094-1.278,9.093,9.093,0,0,1-3.528-3.6,10.982,10.982,0,0,1-1.278-5.382,11.24,11.24,0,0,1,1.242-5.382,8.735,8.735,0,0,1,3.492-3.582,10.392,10.392,0,0,1,5.166-1.26,10.1,10.1,0,0,1,5,1.224,8.649,8.649,0,0,1,3.42,3.438A10.354,10.354,0,0,1,127.656-10.4Zm-4.284-1.3a4.67,4.67,0,0,0-1.62-3.636,5.792,5.792,0,0,0-3.924-1.368,5.271,5.271,0,0,0-3.636,1.35,5.642,5.642,0,0,0-1.8,3.654ZM141.7-20.16a8.9,8.9,0,0,1,4.194.972,6.913,6.913,0,0,1,2.9,2.88,9.474,9.474,0,0,1,1.044,4.608V0h-4.068V-11.088a5.757,5.757,0,0,0-1.332-4.086A4.741,4.741,0,0,0,140.8-16.6a4.8,4.8,0,0,0-3.654,1.422,5.709,5.709,0,0,0-1.35,4.086V0h-4.1V-19.836h4.1v2.268a6.793,6.793,0,0,1,2.574-1.908A8.228,8.228,0,0,1,141.7-20.16ZM153.684-9.936a11.24,11.24,0,0,1,1.242-5.382,8.834,8.834,0,0,1,3.438-3.582,9.945,9.945,0,0,1,5.04-1.26,9.889,9.889,0,0,1,5.958,1.71,8.418,8.418,0,0,1,3.186,4.878H168.12a4.683,4.683,0,0,0-1.728-2.3A5.1,5.1,0,0,0,163.4-16.7a4.969,4.969,0,0,0-4.014,1.782A7.539,7.539,0,0,0,157.9-9.936a7.614,7.614,0,0,0,1.494,5,4.948,4.948,0,0,0,4.014,1.8,4.555,4.555,0,0,0,4.716-3.132h4.428a8.865,8.865,0,0,1-3.24,4.806A9.562,9.562,0,0,1,163.4.324a9.835,9.835,0,0,1-5.04-1.278,8.957,8.957,0,0,1-3.438-3.6A11.24,11.24,0,0,1,153.684-9.936Zm41.148-.468a12.832,12.832,0,0,1-.144,2.016H179.532A5.5,5.5,0,0,0,181.3-4.572a5.568,5.568,0,0,0,3.888,1.44,4.8,4.8,0,0,0,4.68-2.772h4.428a8.935,8.935,0,0,1-3.258,4.482,9.559,9.559,0,0,1-5.85,1.746A10.131,10.131,0,0,1,180.09-.954a9.093,9.093,0,0,1-3.528-3.6,10.982,10.982,0,0,1-1.278-5.382,11.24,11.24,0,0,1,1.242-5.382,8.734,8.734,0,0,1,3.492-3.582,10.392,10.392,0,0,1,5.166-1.26,10.1,10.1,0,0,1,5,1.224,8.649,8.649,0,0,1,3.42,3.438A10.354,10.354,0,0,1,194.832-10.4Zm-4.284-1.3a4.67,4.67,0,0,0-1.62-3.636A5.792,5.792,0,0,0,185-16.7a5.271,5.271,0,0,0-3.636,1.35,5.642,5.642,0,0,0-1.8,3.654Z"
+				transform="translate(47.523 256.57)"
+				fill="#fff"
+			/>
+			<path
+				id="menu-contact"
+				data-name="Path 30"
+				d="M1.332-12.564a12.779,12.779,0,0,1,1.71-6.588,12.175,12.175,0,0,1,4.644-4.554,12.961,12.961,0,0,1,6.426-1.638,13.054,13.054,0,0,1,7.11,1.962A11.172,11.172,0,0,1,25.74-17.82H20.808a6.612,6.612,0,0,0-2.7-2.952,8.012,8.012,0,0,0-4-.972,8.733,8.733,0,0,0-4.428,1.116,7.767,7.767,0,0,0-3.042,3.2,10.3,10.3,0,0,0-1.1,4.86,10.3,10.3,0,0,0,1.1,4.86A7.887,7.887,0,0,0,9.684-4.482a8.624,8.624,0,0,0,4.428,1.134,8.012,8.012,0,0,0,4-.972,6.612,6.612,0,0,0,2.7-2.952H25.74a11.077,11.077,0,0,1-4.518,5.544A13.145,13.145,0,0,1,14.112.216,12.931,12.931,0,0,1,7.668-1.422,12.213,12.213,0,0,1,3.042-5.976,12.778,12.778,0,0,1,1.332-12.564ZM39.132.324A10.159,10.159,0,0,1,34.056-.954a9.181,9.181,0,0,1-3.564-3.6,10.859,10.859,0,0,1-1.3-5.382A10.651,10.651,0,0,1,30.528-15.3a9.2,9.2,0,0,1,3.636-3.6,10.551,10.551,0,0,1,5.148-1.26A10.551,10.551,0,0,1,44.46-18.9,9.2,9.2,0,0,1,48.1-15.3a10.651,10.651,0,0,1,1.332,5.364A10.43,10.43,0,0,1,48.06-4.572,9.472,9.472,0,0,1,44.334-.954,10.739,10.739,0,0,1,39.132.324Zm0-3.564A6.107,6.107,0,0,0,42.1-4a5.76,5.76,0,0,0,2.25-2.268,7.292,7.292,0,0,0,.864-3.672,7.443,7.443,0,0,0-.828-3.654,5.59,5.59,0,0,0-2.2-2.25A6.006,6.006,0,0,0,39.24-16.6a5.905,5.905,0,0,0-2.934.756,5.4,5.4,0,0,0-2.142,2.25,7.721,7.721,0,0,0-.792,3.654,6.96,6.96,0,0,0,1.638,4.95A5.413,5.413,0,0,0,39.132-3.24ZM63.5-20.16a8.9,8.9,0,0,1,4.194.972,6.913,6.913,0,0,1,2.9,2.88A9.474,9.474,0,0,1,71.64-11.7V0H67.572V-11.088a5.757,5.757,0,0,0-1.332-4.086A4.741,4.741,0,0,0,62.6-16.6a4.8,4.8,0,0,0-3.654,1.422,5.709,5.709,0,0,0-1.35,4.086V0H53.5V-19.836h4.1v2.268a6.793,6.793,0,0,1,2.574-1.908A8.229,8.229,0,0,1,63.5-20.16Zm18.144,3.672v10.98a2.107,2.107,0,0,0,.522,1.6,2.6,2.6,0,0,0,1.782.486h2.52V0h-3.24a6.245,6.245,0,0,1-4.248-1.3,5.341,5.341,0,0,1-1.476-4.212v-10.98h-2.34v-3.348h2.34v-4.932h4.14v4.932h4.824v3.348Zm7.236,6.48A10.978,10.978,0,0,1,90.126-15.3a9.1,9.1,0,0,1,3.384-3.582,9.066,9.066,0,0,1,4.734-1.278,8.659,8.659,0,0,1,4.086.918,8.292,8.292,0,0,1,2.79,2.286v-2.88h4.14V0h-4.14V-2.952a8.15,8.15,0,0,1-2.844,2.34,8.765,8.765,0,0,1-4.1.936A8.722,8.722,0,0,1,93.492-.99a9.319,9.319,0,0,1-3.366-3.672A11.3,11.3,0,0,1,88.884-10.008Zm16.236.072a7.183,7.183,0,0,0-.846-3.564,5.939,5.939,0,0,0-2.214-2.3,5.792,5.792,0,0,0-2.952-.792,5.9,5.9,0,0,0-2.952.774,5.837,5.837,0,0,0-2.214,2.268,7.081,7.081,0,0,0-.846,3.546,7.389,7.389,0,0,0,.846,3.6A5.969,5.969,0,0,0,96.174-4.05a5.725,5.725,0,0,0,2.934.81,5.792,5.792,0,0,0,2.952-.792,5.909,5.909,0,0,0,2.214-2.322A7.285,7.285,0,0,0,105.12-9.936Zm8.172,0a11.24,11.24,0,0,1,1.242-5.382,8.835,8.835,0,0,1,3.438-3.582,9.945,9.945,0,0,1,5.04-1.26,9.889,9.889,0,0,1,5.958,1.71,8.418,8.418,0,0,1,3.186,4.878h-4.428a4.683,4.683,0,0,0-1.728-2.3,5.1,5.1,0,0,0-2.988-.828A4.969,4.969,0,0,0,119-14.922,7.539,7.539,0,0,0,117.5-9.936a7.613,7.613,0,0,0,1.494,5,4.948,4.948,0,0,0,4.014,1.8,4.555,4.555,0,0,0,4.716-3.132h4.428a8.865,8.865,0,0,1-3.24,4.806,9.562,9.562,0,0,1-5.9,1.782,9.835,9.835,0,0,1-5.04-1.278,8.957,8.957,0,0,1-3.438-3.6A11.24,11.24,0,0,1,113.292-9.936Zm27.756-6.552v10.98a2.107,2.107,0,0,0,.522,1.6,2.6,2.6,0,0,0,1.782.486h2.52V0h-3.24a6.245,6.245,0,0,1-4.248-1.3,5.341,5.341,0,0,1-1.476-4.212v-10.98h-2.34v-3.348h2.34v-4.932h4.14v4.932h4.824v3.348Zm44.316-8.532V0h-4.1V-17.136L173.628,0h-2.844l-7.668-17.136V0h-4.1V-25.02h4.428L172.224-5.4l8.748-19.62ZM208.944-10.4a12.832,12.832,0,0,1-.144,2.016H193.644a5.5,5.5,0,0,0,1.764,3.816,5.568,5.568,0,0,0,3.888,1.44,4.8,4.8,0,0,0,4.68-2.772H208.4a8.935,8.935,0,0,1-3.258,4.482A9.559,9.559,0,0,1,199.3.324,10.131,10.131,0,0,1,194.2-.954a9.093,9.093,0,0,1-3.528-3.6A10.982,10.982,0,0,1,189.4-9.936a11.24,11.24,0,0,1,1.242-5.382A8.734,8.734,0,0,1,194.13-18.9a10.392,10.392,0,0,1,5.166-1.26,10.1,10.1,0,0,1,5,1.224,8.649,8.649,0,0,1,3.42,3.438A10.354,10.354,0,0,1,208.944-10.4Zm-4.284-1.3a4.67,4.67,0,0,0-1.62-3.636,5.792,5.792,0,0,0-3.924-1.368,5.271,5.271,0,0,0-3.636,1.35,5.642,5.642,0,0,0-1.8,3.654Z"
+				transform="translate(47.523 331.57)"
+				fill="#fff"
+			/>
+		</svg>
+
+		<main>
+			<div id="shapes">
+				<!-- <canvas id="shapeCanvas" onload="drawShapes();"></canvas> -->
+			</div>
+			<section id="intro">
+				<h1 id="name">Alex<br />Hoare</h1>
+				<ul id="descriptors">
+					<li>I'm a...</li>
+					<li id="current-descriptor"></li>
+				</ul>
+				<div id="contact-me-button-container" class="expanding-button">
+					<a href="#contact">
+						<svg
+							id="contact-me-button"
+							xmlns="http://www.w3.org/2000/svg"
+							width="336.172"
+							height="151.602"
+							viewBox="0 0 336.172 151.602"
+							onmouseenter="expandContactMe()"
+							onmouseleave="shrinkContactMe()"
+						>
+							<g
+								id="contact-me-button"
+								transform="translate(-791.914 -763.723)"
+							>
+								<rect
+									id="contact-me-button-rect"
+									data-name="Rectangle 15"
+									width="331.172"
+									height="146.602"
+									rx="68"
+									transform="translate(794.414 766.223)"
+									fill="#ff7277"
+									stroke="#ff7277"
+									stroke-width="5"
+								/>
+								<text
+									id="contact-me-button-text"
+									data-name="Contact Me"
+									transform="translate(837 854)"
+									fill="#fff"
+									font-size="40"
+									font-family="Poppins-SemiBold, Poppins"
+									font-weight="600"
+									letter-spacing="0.032em"
+								>
+									<tspan x="0" y="0">Contact Me</tspan>
+								</text>
+							</g>
+						</svg>
+					</a>
+				</div>
+			</section>
+			<section id="projects">
+				<div id="projects-flex-container">
+					<h2 id="projects-title" class="section-title">My Projects</h2>
+					<!-- <img
+						id="project-gif"
+						src="https://hybridtechcar.com/wp-content/uploads/2019/04/download-17.png"
+						width="30%"
+					/> -->
+					<div class="info-card" id="project-info-card">
+						<h3 id="project-title">Title of Project</h3>
+						<p id="project-description">
+							This project was indeed a project that I made. I made this project
+							at a specific point in time, using several technologies listed in
+							this sentence. This was overall a cool project.
+						</p>
+						<p id="project-source-code">
+							Source Code:<br />https://github.com/alexhoare/project_name
+						</p>
+					</div>
+				</div>
+				<div id="timeline-container">
+					<svg
+						id="project-pointer"
+						xmlns="http://www.w3.org/2000/svg"
+						width="46"
+						height="41"
+						viewBox="0 0 46 41"
+						transform="translate(960 0)"
+					>
+						<path
+							id="Polygon_3"
+							data-name="Polygon 3"
+							d="M23,0,46,41H0Z"
+							transform="translate(46 41) rotate(180)"
+							fill="#456990"
+						/>
+					</svg>
+
+					<svg
+						id="timeline"
+						xmlns="http://www.w3.org/2000/svg"
+						xmlns:xlink="http://www.w3.org/1999/xlink"
+						width="4877"
+						height="1965.122"
+						viewBox="0 0 4877 1965.122"
+					>
+						<defs>
+							<clipPath id="clip-path">
+								<rect width="4719" height="250.214" fill="none" />
+							</clipPath>
+						</defs>
+						<rect
+							id="timeline-bar"
+							data-name="Rectangle 18"
+							width="4877"
+							height="51"
+							transform="translate(0 200)"
+							fill="#456990"
+						/>
+						<g
+							id="timeline-content"
+							data-name="Repeat Grid 1"
+							clip-path="url(#clip-path)"
+							transform="translate(960 0)"
+						>
+							<g transform="translate(-62 -635)">
+								<rect
+									id="Rectangle_19"
+									data-name="Rectangle 19"
+									width="16"
+									height="106.664"
+									rx="5"
+									transform="translate(62 778.55)"
+									fill="#ff7277"
+								/>
+								<defs>
+									<pattern
+										id="pig-latin-pattern"
+										preserveAspectRatio="none"
+										width="100%"
+										height="100%"
+										viewBox="0 0 350 263"
+									>
+										<image
+											width="350"
+											height="263"
+											xlink:href="./project_images/pig_latin.png"
+										/>
+									</pattern>
+									<pattern
+										id="n-queens-pattern"
+										preserveAspectRatio="none"
+										width="100%"
+										height="100%"
+										viewBox="0 0 350 263"
+									>
+										<image
+											width="350"
+											height="263"
+											xlink:href="./project_images/n_queens.png"
+										/>
+									</pattern>
+									<pattern
+										id="sudoku-solver-pattern"
+										preserveAspectRatio="none"
+										width="100%"
+										height="100%"
+										viewBox="0 0 350 263"
+									>
+										<image
+											width="350"
+											height="263"
+											xlink:href="./project_images/sudoku_solver.png"
+										/>
+									</pattern>
+									<pattern
+										id="snake-pattern"
+										preserveAspectRatio="none"
+										width="100%"
+										height="100%"
+										viewBox="0 0 350 263"
+									>
+										<image
+											width="350"
+											height="263"
+											xlink:href="./project_images/snake_v1.jpg"
+										/>
+									</pattern>
+									<pattern
+										id="snake-v2-pattern"
+										preserveAspectRatio="none"
+										width="100%"
+										height="100%"
+										viewBox="0 0 350 263"
+									>
+										<image
+											width="350"
+											height="263"
+											xlink:href="./project_images/snake_v2.png"
+										/>
+									</pattern>
+									<pattern
+										id="sudoku-solver-pattern"
+										preserveAspectRatio="none"
+										width="100%"
+										height="100%"
+										viewBox="0 0 350 263"
+									>
+										<image
+											width="350"
+											height="263"
+											xlink:href="./project_images/sudoku_solver.png"
+										/>
+									</pattern>
+									<pattern
+										id="quote-generator-pattern"
+										preserveAspectRatio="none"
+										width="100%"
+										height="100%"
+										viewBox="0 0 350 263"
+									>
+										<image
+											width="350"
+											height="263"
+											xlink:href="./project_images/quote_generator.png"
+										/>
+									</pattern>
+									<pattern
+										id="gift-wrapping-simulator-pattern"
+										preserveAspectRatio="none"
+										width="100%"
+										height="100%"
+										viewBox="0 0 350 263"
+									>
+										<image
+											width="350"
+											height="263"
+											xlink:href="./project_images/gift_wrapping_simulator.png"
+										/>
+									</pattern>
+									<pattern
+										id="rotoscoper-pattern"
+										preserveAspectRatio="none"
+										width="100%"
+										height="100%"
+										viewBox="0 0 350 263"
+									>
+										<image
+											width="350"
+											height="263"
+											xlink:href="./project_images/rotoscoper.png"
+										/>
+									</pattern>
+									<pattern
+										id="blob-detection-pattern"
+										preserveAspectRatio="none"
+										width="100%"
+										height="100%"
+										viewBox="0 0 350 263"
+									>
+										<image
+											width="350"
+											height="263"
+											xlink:href="./project_images/blob_detection.jpg"
+										/>
+									</pattern>
+									<pattern
+										id="mario-kart-pattern"
+										preserveAspectRatio="none"
+										width="100%"
+										height="100%"
+										viewBox="0 0 350 263"
+									>
+										<image
+											width="350"
+											height="263"
+											xlink:href="./project_images/mario_kart.jpg"
+										/>
+									</pattern>
+									<pattern
+										id="face-doodle-pattern"
+										preserveAspectRatio="none"
+										width="100%"
+										height="100%"
+										viewBox="0 0 350 263"
+									>
+										<image
+											width="350"
+											height="263"
+											xlink:href="./project_images/face_doodle.png"
+										/>
+									</pattern>
+									<pattern
+										id="this-website-pattern"
+										preserveAspectRatio="none"
+										width="100%"
+										height="100%"
+										viewBox="0 0 350 263"
+									>
+										<image
+											width="350"
+											height="263"
+											xlink:href="./project_images/this_website.png"
+										/>
+									</pattern>
+								</defs>
+								<image
+									id="Rectangle_20"
+									data-name="Rectangle 20"
+									width="198.191"
+									transform="translate(87 671.122)"
+									fill="#c4c4c4"
+									xlink:href="./project_images/pig_latin.png"
+									border-style="solid"
+									border-width="4px"
+									border-color="#00FF00"
+								/>
+
+								<text
+									id="Pig_Latin_Translator"
+									data-name="Pig Latin Translator"
+									transform="translate(87 658)"
+									fill="#424b54"
+									font-size="21"
+									font-family="Poppins-Regular, Poppins"
+								>
+									<tspan x="0" y="0">Pig Latin Translator</tspan>
+								</text>
+								<g
+									id="pig_latin"
+									transform="translate(87 671)"
+									stroke="#707070"
+									stroke-width="4"
+									fill="url(#pig-latin-pattern)"
+								>
+									<rect width="198" height="149" stroke="none" />
+									<rect x="2" y="2" width="194" height="145" fill="none" />
+								</g>
+							</g>
+							<g transform="translate(337 -635)">
+								<rect
+									id="Rectangle_19-2"
+									data-name="Rectangle 19"
+									width="16"
+									height="106.664"
+									rx="5"
+									transform="translate(62 778.55)"
+									fill="#ff7277"
+								/>
+								<rect
+									id="Rectangle_20-2"
+									data-name="Rectangle 20"
+									width="198.191"
+									height="148.742"
+									transform="translate(87 671.122)"
+									fill="#c4c4c4"
+								/>
+								<text
+									id="N-Queens_Solver"
+									data-name="N-Queens Solver"
+									transform="translate(87 658)"
+									fill="#424b54"
+									font-size="21"
+									font-family="Poppins-Regular, Poppins"
+								>
+									<tspan x="0" y="0">N-Queens Solver</tspan>
+								</text>
+								<g
+									id=""
+									transform="translate(87 671)"
+									stroke="#707070"
+									stroke-width="4"
+									fill="url(#n-queens-pattern)"
+								>
+									<rect width="198" height="149" stroke="none" />
+									<rect x="2" y="2" width="194" height="145" fill="none" />
+								</g>
+							</g>
+							<g transform="translate(736 -635)">
+								<rect
+									id="Rectangle_19-3"
+									data-name="Rectangle 19"
+									width="16"
+									height="106.664"
+									rx="5"
+									transform="translate(62 778.55)"
+									fill="#ff7277"
+								/>
+								<rect
+									id="Rectangle_20-3"
+									data-name="Rectangle 20"
+									width="198.191"
+									height="148.742"
+									transform="translate(87 671.122)"
+									fill="#c4c4c4"
+								/>
+								<text
+									id="Sudoku_Solver"
+									data-name="Sudoku Solver"
+									transform="translate(87 658)"
+									fill="#424b54"
+									font-size="21"
+									font-family="Poppins-Regular, Poppins"
+								>
+									<tspan x="0" y="0">Sudoku Solver</tspan>
+								</text>
+								<g
+									id="pig_latin"
+									transform="translate(87 671)"
+									stroke="#707070"
+									stroke-width="4"
+									fill="url(#sudoku-solver-pattern)"
+								>
+									<rect width="198" height="149" stroke="none" />
+									<rect x="2" y="2" width="194" height="145" fill="none" />
+								</g>
+							</g>
+							<g transform="translate(1135 -635)">
+								<rect
+									id="Rectangle_19-4"
+									data-name="Rectangle 19"
+									width="16"
+									height="106.664"
+									rx="5"
+									transform="translate(62 778.55)"
+									fill="#ff7277"
+								/>
+								<rect
+									id="Rectangle_20-4"
+									data-name="Rectangle 20"
+									width="198.191"
+									height="148.742"
+									transform="translate(87 671.122)"
+									fill="#c4c4c4"
+								/>
+								<text
+									id="Snake"
+									transform="translate(87 658)"
+									fill="#424b54"
+									font-size="21"
+									font-family="Poppins-Regular, Poppins"
+								>
+									<tspan x="0" y="0">Snake</tspan>
+								</text>
+								<g
+									id="pig_latin"
+									transform="translate(87 671)"
+									stroke="#707070"
+									stroke-width="4"
+									fill="url(#snake-pattern)"
+								>
+									<rect width="198" height="149" stroke="none" />
+									<rect x="2" y="2" width="194" height="145" fill="none" />
+								</g>
+							</g>
+							<g transform="translate(1534 -635)">
+								<rect
+									id="Rectangle_19-5"
+									data-name="Rectangle 19"
+									width="16"
+									height="106.664"
+									rx="5"
+									transform="translate(62 778.55)"
+									fill="#ff7277"
+								/>
+								<rect
+									id="Rectangle_20-5"
+									data-name="Rectangle 20"
+									width="198.191"
+									height="148.742"
+									transform="translate(87 671.122)"
+									fill="#c4c4c4"
+								/>
+								<text
+									id="Snake_V2"
+									data-name="Snake V2"
+									transform="translate(87 658)"
+									fill="#424b54"
+									font-size="21"
+									font-family="Poppins-Regular, Poppins"
+								>
+									<tspan x="0" y="0">Snake V2</tspan>
+								</text>
+								<g
+									id="pig_latin"
+									transform="translate(87 671)"
+									stroke="#707070"
+									stroke-width="4"
+									fill="url(#snake-v2-pattern)"
+								>
+									<rect width="198" height="149" stroke="none" />
+									<rect x="2" y="2" width="194" height="145" fill="none" />
+								</g>
+							</g>
+							<g transform="translate(1933 -635)">
+								<rect
+									id="Rectangle_19-6"
+									data-name="Rectangle 19"
+									width="16"
+									height="106.664"
+									rx="5"
+									transform="translate(62 778.55)"
+									fill="#ff7277"
+								/>
+								<rect
+									id="Rectangle_20-6"
+									data-name="Rectangle 20"
+									width="198.191"
+									height="148.742"
+									transform="translate(87 671.122)"
+									fill="#c4c4c4"
+								/>
+								<text
+									id="Quote_Generator"
+									data-name="Quote Generator"
+									transform="translate(87 658)"
+									fill="#424b54"
+									font-size="21"
+									font-family="Poppins-Regular, Poppins"
+								>
+									<tspan x="0" y="0">Quote Generator</tspan>
+								</text>
+								<g
+									id="pig_latin"
+									transform="translate(87 671)"
+									stroke="#707070"
+									stroke-width="4"
+									fill="url(#quote-generator-pattern)"
+								>
+									<rect width="198" height="149" stroke="none" />
+									<rect x="2" y="2" width="194" height="145" fill="none" />
+								</g>
+							</g>
+							<g transform="translate(2332 -635)">
+								<rect
+									id="Rectangle_19-7"
+									data-name="Rectangle 19"
+									width="16"
+									height="106.664"
+									rx="5"
+									transform="translate(62 778.55)"
+									fill="#ff7277"
+								/>
+								<rect
+									id="Rectangle_20-7"
+									data-name="Rectangle 20"
+									width="198.191"
+									height="148.742"
+									transform="translate(87 671.122)"
+									fill="#c4c4c4"
+								/>
+								<text
+									id="Gift_Wrapping_Simulator"
+									data-name="Gift Wrapping Simulator"
+									transform="translate(87 658)"
+									fill="#424b54"
+									font-size="21"
+									font-family="Poppins-Regular, Poppins"
+								>
+									<tspan x="0" y="0">Gift Wrapping Simulator</tspan>
+								</text>
+								<g
+									id="pig_latin"
+									transform="translate(87 671)"
+									stroke="#707070"
+									stroke-width="4"
+									fill="url(#gift-wrapping-simulator-pattern)"
+								>
+									<rect width="198" height="149" stroke="none" />
+									<rect x="2" y="2" width="194" height="145" fill="none" />
+								</g>
+							</g>
+							<g transform="translate(2731 -635)">
+								<rect
+									id="Rectangle_19-8"
+									data-name="Rectangle 19"
+									width="16"
+									height="106.664"
+									rx="5"
+									transform="translate(62 778.55)"
+									fill="#ff7277"
+								/>
+								<rect
+									id="Rectangle_20-8"
+									data-name="Rectangle 20"
+									width="198.191"
+									height="148.742"
+									transform="translate(87 671.122)"
+									fill="#c4c4c4"
+								/>
+								<text
+									id="Rotoscoper"
+									transform="translate(87 658)"
+									fill="#424b54"
+									font-size="21"
+									font-family="Poppins-Regular, Poppins"
+								>
+									<tspan x="0" y="0">Rotoscoper</tspan>
+								</text>
+								<g
+									id="pig_latin"
+									transform="translate(87 671)"
+									stroke="#707070"
+									stroke-width="4"
+									fill="url(#rotoscoper-pattern)"
+								>
+									<rect width="198" height="149" stroke="none" />
+									<rect x="2" y="2" width="194" height="145" fill="none" />
+								</g>
+							</g>
+							<g transform="translate(3130 -635)">
+								<rect
+									id="Rectangle_19-9"
+									data-name="Rectangle 19"
+									width="16"
+									height="106.664"
+									rx="5"
+									transform="translate(62 778.55)"
+									fill="#ff7277"
+								/>
+								<rect
+									id="Rectangle_20-9"
+									data-name="Rectangle 20"
+									width="198.191"
+									height="148.742"
+									transform="translate(87 671.122)"
+									fill="#c4c4c4"
+								/>
+								<text
+									id="Blob_Detection"
+									data-name="Blob Detection"
+									transform="translate(87 658)"
+									fill="#424b54"
+									font-size="21"
+									font-family="Poppins-Regular, Poppins"
+								>
+									<tspan x="0" y="0">Blob Detection</tspan>
+								</text>
+								<g
+									id="pig_latin"
+									transform="translate(87 671)"
+									stroke="#707070"
+									stroke-width="4"
+									fill="url(#blob-detection-pattern)"
+								>
+									<rect width="198" height="149" stroke="none" />
+									<rect x="2" y="2" width="194" height="145" fill="none" />
+								</g>
+							</g>
+							<g transform="translate(3529 -635)">
+								<rect
+									id="Rectangle_19-10"
+									data-name="Rectangle 19"
+									width="16"
+									height="106.664"
+									rx="5"
+									transform="translate(62 778.55)"
+									fill="#ff7277"
+								/>
+								<rect
+									id="Rectangle_20-10"
+									data-name="Rectangle 20"
+									width="198.191"
+									height="148.742"
+									transform="translate(87 671.122)"
+									fill="#c4c4c4"
+								/>
+								<text
+									id="Mario_Kart"
+									data-name="Mario Kart"
+									transform="translate(87 658)"
+									fill="#424b54"
+									font-size="21"
+									font-family="Poppins-Regular, Poppins"
+								>
+									<tspan x="0" y="0">Mario Kart</tspan>
+								</text>
+								<g
+									id="pig_latin"
+									transform="translate(87 671)"
+									stroke="#707070"
+									stroke-width="4"
+									fill="url(#mario-kart-pattern)"
+								>
+									<rect width="198" height="149" stroke="none" />
+									<rect x="2" y="2" width="194" height="145" fill="none" />
+								</g>
+							</g>
+							<g transform="translate(3928 -635)">
+								<rect
+									id="Rectangle_19-11"
+									data-name="Rectangle 19"
+									width="16"
+									height="106.664"
+									rx="5"
+									transform="translate(62 778.55)"
+									fill="#ff7277"
+								/>
+								<rect
+									id="Rectangle_20-11"
+									data-name="Rectangle 20"
+									width="198.191"
+									height="148.742"
+									transform="translate(87 671.122)"
+									fill="#c4c4c4"
+								/>
+								<text
+									id="Face_Doodle"
+									data-name="Face Doodle"
+									transform="translate(87 658)"
+									fill="#424b54"
+									font-size="21"
+									font-family="Poppins-Regular, Poppins"
+								>
+									<tspan x="0" y="0">Face Doodle</tspan>
+								</text>
+								<g
+									id="pig_latin"
+									transform="translate(87 671)"
+									stroke="#707070"
+									stroke-width="4"
+									fill="url(#face-doodle-pattern)"
+								>
+									<rect width="198" height="149" stroke="none" />
+									<rect x="2" y="2" width="194" height="145" fill="none" />
+								</g>
+							</g>
+							<g transform="translate(4327 -635)">
+								<rect
+									id="Rectangle_19-12"
+									data-name="Rectangle 19"
+									width="16"
+									height="106.664"
+									rx="5"
+									transform="translate(62 778.55)"
+									fill="#ff7277"
+								/>
+								<rect
+									id="Rectangle_20-12"
+									data-name="Rectangle 20"
+									width="198.191"
+									height="148.742"
+									transform="translate(87 671.122)"
+									fill="#c4c4c4"
+								/>
+								<text
+									id="This_Website_"
+									data-name="This Website!"
+									transform="translate(87 658)"
+									fill="#424b54"
+									font-size="21"
+									font-family="Poppins-Regular, Poppins"
+								>
+									<tspan x="0" y="0">This Website!</tspan>
+								</text>
+								<g
+									id="pig_latin"
+									transform="translate(87 671)"
+									stroke="#707070"
+									stroke-width="4"
+									fill="url(#this-website-pattern)"
+								>
+									<rect width="198" height="149" stroke="none" />
+									<rect x="2" y="2" width="194" height="145" fill="none" />
+								</g>
+							</g>
+						</g>
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="3489"
+							height="47"
+							viewBox="0 0 3489 47"
+						></svg>
+
+						<g id="timeline-markers" transform="translate(960 0)">
+							<g
+								id="_10th_Grade"
+								data-name="10th Grade"
+								transform="translate(-62 -1715)"
+							>
+								<path
+									id="Polygon_1"
+									data-name="Polygon 1"
+									d="M9,0l9,43H0Z"
+									transform="translate(176 1952)"
+									fill="#ff7277"
+								/>
+								<text
+									id="_10th_Grade-2"
+									data-name="10th Grade"
+									transform="translate(203 1992)"
+									fill="#fe7277"
+									font-size="28"
+									font-family="SegoeUI-Semibold, Segoe UI"
+									font-weight="600"
+								>
+									<tspan x="0" y="0">10th Grade</tspan>
+								</text>
+							</g>
+							<g
+								id="_12th_Grade"
+								data-name="12th Grade"
+								transform="translate(2062 -1715)"
+							>
+								<path
+									id="Polygon_1-2"
+									data-name="Polygon 1"
+									d="M9,0l9,43H0Z"
+									transform="translate(176 1952)"
+									fill="#ff7277"
+								/>
+								<text
+									id="_12th_Grade-2"
+									data-name="12th Grade"
+									transform="translate(203 1992)"
+									fill="#fe7277"
+									font-size="28"
+									font-family="SegoeUI-Semibold, Segoe UI"
+									font-weight="600"
+								>
+									<tspan x="0" y="0">11th Grade</tspan>
+								</text>
+							</g>
+							<g
+								id="_11th_Grade"
+								data-name="11th Grade"
+								transform="translate(3262 -1715)"
+							>
+								<path
+									id="Polygon_1-3"
+									data-name="Polygon 1"
+									d="M9,0l9,43H0Z"
+									transform="translate(176 1952)"
+									fill="#ff7277"
+								/>
+								<text
+									id="_11th_Grade-2"
+									data-name="11th Grade"
+									transform="translate(203 1992)"
+									fill="#fe7277"
+									font-size="28"
+									font-family="SegoeUI-Semibold, Segoe UI"
+									font-weight="600"
+								>
+									<tspan x="0" y="0">12th Grade</tspan>
+								</text>
+							</g>
+						</g>
+						<!-- 
+						<g id="timeline-markers" transform="translate(960 0)">
+							<g
+								id="_10th_Grade"
+								data-name="10th Grade"
+								transform="translate(-62 -1715)"
+							>
+								<path
+									id="Polygon_1"
+									data-name="Polygon 1"
+									d="M9,0l9,70H0Z"
+									transform="translate(176 1952)"
+									fill="#ff7277"
+								/>
+								<text
+									id="_10th_Grade-2"
+									data-name="10th Grade"
+									transform="translate(176 2062)"
+									fill="#fe7277"
+									font-size="28"
+									font-family="SegoeUI-Semibold, Segoe UI"
+									font-weight="600"
+								>
+									<tspan x="0" y="0">10th Grade</tspan>
+								</text>
+							</g>
+							<g
+								id="_11th_Grade"
+								data-name="11th Grade"
+								transform="translate(2056 -1715)"
+							>
+								<path
+									id="Polygon_1-2"
+									data-name="Polygon 1"
+									d="M9,0l9,70H0Z"
+									transform="translate(176 1952)"
+									fill="#ff7277"
+								/>
+								<text
+									id="_11th_Grade-2"
+									data-name="11th Grade"
+									transform="translate(176 2062)"
+									fill="#fe7277"
+									font-size="28"
+									font-family="SegoeUI-Semibold, Segoe UI"
+									font-weight="600"
+								>
+									<tspan x="0" y="0">11th Grade</tspan>
+								</text>
+							</g>
+							<g
+								id="_12th_Grade"
+								data-name="12th Grade"
+								transform="translate(3262 -1715)"
+							>
+								<path
+									id="Polygon_1-3"
+									data-name="Polygon 1"
+									d="M9,0l9,70H0Z"
+									transform="translate(176 1952)"
+									fill="#ff7277"
+								/>
+								<text
+									id="_12th_Grade-2"
+									data-name="12th Grade"
+									transform="translate(176 2062)"
+									fill="#fe7277"
+									font-size="28"
+									font-family="SegoeUI-Semibold, Segoe UI"
+									font-weight="600"
+								>
+									<tspan x="0" y="0">12th Grade</tspan>
+								</text>
+							</g>
+						</g> -->
+					</svg>
+				</div>
+			</section>
+			<section id="skills">
+				<h2 id="skills-title" class="section-title">My Skills</h2>
+				<svg
+					id="skill-wheel"
+					xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					width="1358"
+					height="1277"
+					viewBox="0 0 1358 1277"
+				>
+					<defs>
+						<clipPath id="clip-Artboard_1">
+							<rect width="1358" height="1277" />
+						</clipPath>
+					</defs>
+					<g
+						id="Artboard_1"
+						data-name="Artboard – 1"
+						clip-path="url(#clip-Artboard_1)"
+					>
+						<rect width="1358" height="1277" fill="none" />
+						<text
+							id="C_"
+							data-name="C++"
+							transform="translate(899.483 674.5)"
+							fill="#ff7277"
+							stroke="#707070"
+							stroke-width="1"
+							font-size="103"
+							font-family="Poppins-Regular, Poppins"
+						>
+							<tspan x="0" y="0">C++</tspan>
+						</text>
+						<text
+							id="Java"
+							transform="translate(864.743 494.735) rotate(-45)"
+							fill="none"
+							stroke="#707070"
+							stroke-width="1"
+							font-size="103"
+							font-family="Poppins-Regular, Poppins"
+						>
+							<tspan x="0" y="0">Java</tspan>
+						</text>
+						<text
+							id="Python"
+							transform="translate(715 408.714) rotate(-90)"
+							fill="none"
+							stroke="#707070"
+							stroke-width="1"
+							font-size="103"
+							font-family="Poppins-Regular, Poppins"
+						>
+							<tspan x="0" y="0">Python</tspan>
+						</text>
+
+						<text
+							id="Qt_QML"
+							data-name="Qt/QML"
+							transform="translate(544.169 443.823) rotate(-135)"
+							fill="none"
+							stroke="#707070"
+							stroke-width="1"
+							font-size="103"
+							font-family="Poppins-Regular, Poppins"
+						>
+							<tspan x="0" y="0">Qt/QML</tspan>
+						</text>
+						<text
+							id="OpenCV_"
+							data-name="OpenCV
+"
+							transform="translate(458.517 591) rotate(180)"
+							fill="none"
+							stroke="#707070"
+							stroke-width="1"
+							font-size="103"
+							font-family="Poppins-Regular, Poppins"
+						>
+							<tspan x="0" y="0">OpenCV</tspan>
+						</text>
+						<text
+							id="CUDA"
+							transform="translate(493.257 774.954) rotate(135)"
+							fill="none"
+							stroke="#707070"
+							stroke-width="1"
+							font-size="103"
+							font-family="Poppins-Regular, Poppins"
+						>
+							<tspan x="0" y="0">CUDA</tspan>
+						</text>
+						<text
+							id="HTML"
+							transform="translate(643 868.286) rotate(90)"
+							fill="none"
+							stroke="#707070"
+							stroke-width="1"
+							font-size="103"
+							font-family="Poppins-Regular, Poppins"
+						>
+							<tspan x="0" y="0">HTML</tspan>
+						</text>
+						<text
+							id="Javascript"
+							transform="translate(813.831 833.177) rotate(45)"
+							fill="none"
+							stroke="#707070"
+							stroke-width="1"
+							font-size="103"
+							font-family="Poppins-Regular, Poppins"
+						>
+							<tspan x="0" y="0">Javascript</tspan>
+						</text>
+
+						<g
+							id="Path_28"
+							data-name="Path 28"
+							transform="translate(458.517 418.017)"
+							fill="rgba(255,255,255,0)"
+						>
+							<path
+								d="M 220.4832000732422 440.4664306640625 C 205.5573120117188 440.4664306640625 190.6409149169922 438.9627685546875 176.1483612060547 435.9971313476563 C 162.0244293212891 433.1069641113281 148.1316375732422 428.79443359375 134.8559722900391 423.1792602539063 C 121.8211975097656 417.6659851074219 109.2490921020508 410.8421020507813 97.48886871337891 402.8970336914063 C 85.84025573730469 395.0273742675781 74.88642120361328 385.9896545410156 64.93158721923828 376.0348205566406 C 54.97681045532227 366.0799865722656 45.93903350830078 355.1261596679688 38.06942367553711 343.4775390625 C 30.12436676025391 331.7173767089844 23.30042266845703 319.145263671875 17.78720092773438 306.1104125976563 C 12.17203330993652 292.8347473144531 7.859477996826172 278.9419860839844 4.969311237335205 264.8180236816406 C 2.003700017929077 250.3254852294922 0.5000333786010742 235.4090881347656 0.5000333786010742 220.4832000732422 C 0.5000333786010742 205.5573120117188 2.003700017929077 190.6409149169922 4.969311237335205 176.1483612060547 C 7.859477996826172 162.0244293212891 12.17203330993652 148.1316375732422 17.78720092773438 134.8559722900391 C 23.30042266845703 121.8211975097656 30.12436676025391 109.2490921020508 38.06942367553711 97.48886871337891 C 45.93903350830078 85.84025573730469 54.97681045532227 74.88642120361328 64.93158721923828 64.93158721923828 C 74.88642120361328 54.97681045532227 85.84025573730469 45.93903350830078 97.48886871337891 38.06942367553711 C 109.2490921020508 30.12436676025391 121.8211975097656 23.30042266845703 134.8559722900391 17.78720092773438 C 148.1316375732422 12.17203330993652 162.0244293212891 7.859477996826172 176.1483612060547 4.969311237335205 C 190.6409149169922 2.003700017929077 205.5573120117188 0.5000333786010742 220.4832000732422 0.5000333786010742 C 235.4090881347656 0.5000333786010742 250.3254852294922 2.003700017929077 264.8180236816406 4.969311237335205 C 278.9419860839844 7.859477996826172 292.8347473144531 12.17203330993652 306.1104125976563 17.78720092773438 C 319.145263671875 23.30042266845703 331.7173767089844 30.12436676025391 343.4775390625 38.06942367553711 C 355.1261596679688 45.93903350830078 366.0799865722656 54.97681045532227 376.0348205566406 64.93158721923828 C 385.9896545410156 74.88642120361328 395.0273742675781 85.84025573730469 402.8970336914063 97.48886871337891 C 410.8421020507813 109.2490921020508 417.6659851074219 121.8211975097656 423.1792602539063 134.8559722900391 C 428.79443359375 148.1316375732422 433.1069641113281 162.0244293212891 435.9971313476563 176.1483612060547 C 438.9627685546875 190.6409149169922 440.4664306640625 205.5573120117188 440.4664306640625 220.4832000732422 C 440.4664306640625 235.4090881347656 438.9627685546875 250.3254852294922 435.9971313476563 264.8180236816406 C 433.1069641113281 278.9419860839844 428.79443359375 292.8347473144531 423.1792602539063 306.1104125976563 C 417.6659851074219 319.145263671875 410.8421020507813 331.7173767089844 402.8970336914063 343.4775390625 C 395.0273742675781 355.1261596679688 385.9896545410156 366.0799865722656 376.0348205566406 376.0348205566406 C 366.0799865722656 385.9896545410156 355.1261596679688 395.0273742675781 343.4775390625 402.8970336914063 C 331.7173767089844 410.8421020507813 319.145263671875 417.6659851074219 306.1104125976563 423.1792602539063 C 292.8347473144531 428.79443359375 278.9419860839844 433.1069641113281 264.8180236816406 435.9971313476563 C 250.3254852294922 438.9627685546875 235.4090881347656 440.4664306640625 220.4832000732422 440.4664306640625 Z"
+								stroke="none"
+							/>
+							<path
+								d="M 220.4832000732422 0.999969482421875 C 205.5908660888672 0.999969482421875 190.708251953125 2.500244140625 176.2486572265625 5.459075927734375 C 162.1570434570313 8.34271240234375 148.2960205078125 12.64535522460938 135.0507507324219 18.24765014648438 C 122.0456848144531 23.74832153320313 109.502197265625 30.55670166015625 97.76876831054688 38.48370361328125 C 86.14654541015625 46.33554077148438 75.2174072265625 55.35281372070313 65.28515625 65.28515625 C 55.35281372070313 75.2174072265625 46.33554077148438 86.14654541015625 38.48370361328125 97.76876831054688 C 30.55670166015625 109.502197265625 23.74832153320313 122.0456848144531 18.24765014648438 135.0507507324219 C 12.64535522460938 148.2960205078125 8.34271240234375 162.1570434570313 5.459075927734375 176.2486572265625 C 2.500244140625 190.708251953125 0.999969482421875 205.5908660888672 0.999969482421875 220.4832000732422 C 0.999969482421875 235.3755340576172 2.500244140625 250.2581481933594 5.459075927734375 264.7177734375 C 8.34271240234375 278.8093872070313 12.64535522460938 292.6703491210938 18.24765014648438 305.9156494140625 C 23.74832153320313 318.9207153320313 30.55670166015625 331.4642028808594 38.48370361328125 343.1976318359375 C 46.33547973632813 354.8198852539063 55.35281372070313 365.7489318847656 65.28515625 375.6812744140625 C 75.2174072265625 385.613525390625 86.14654541015625 394.630859375 97.76876831054688 402.4826965332031 C 109.502197265625 410.4096374511719 122.0456848144531 417.218017578125 135.0507507324219 422.7186889648438 C 148.2960205078125 428.3209838867188 162.1570434570313 432.6236877441406 176.2486572265625 435.5072631835938 C 190.708251953125 438.4660949707031 205.5908660888672 439.9663696289063 220.4832000732422 439.9663696289063 C 235.3755340576172 439.9663696289063 250.2581481933594 438.4660949707031 264.7177734375 435.5072631835938 C 278.8093872070313 432.6236877441406 292.6703491210938 428.3209838867188 305.9156494140625 422.7186889648438 C 318.9207153320313 417.218017578125 331.4642028808594 410.4096374511719 343.1976318359375 402.4826965332031 C 354.8198852539063 394.630859375 365.7489318847656 385.613525390625 375.6812744140625 375.6812744140625 C 385.613525390625 365.7489318847656 394.630859375 354.8198852539063 402.4826965332031 343.1976318359375 C 410.4096374511719 331.4642028808594 417.218017578125 318.9207153320313 422.7186889648438 305.9156494140625 C 428.3209838867188 292.6703491210938 432.6236877441406 278.8093872070313 435.5072631835938 264.7177734375 C 438.4660949707031 250.2581481933594 439.9663696289063 235.3755340576172 439.9663696289063 220.4832000732422 C 439.9663696289063 205.5908660888672 438.4660949707031 190.708251953125 435.5072631835938 176.2486572265625 C 432.6236877441406 162.1570434570313 428.3209838867188 148.2960205078125 422.7186889648438 135.0507507324219 C 417.218017578125 122.0456848144531 410.4096374511719 109.502197265625 402.4826965332031 97.76876831054688 C 394.630859375 86.14654541015625 385.613525390625 75.2174072265625 375.6812744140625 65.28515625 C 365.7489318847656 55.35281372070313 354.8198852539063 46.33547973632813 343.1976318359375 38.48370361328125 C 331.4642028808594 30.55670166015625 318.9207153320313 23.74832153320313 305.9156494140625 18.24765014648438 C 292.6703491210938 12.64535522460938 278.8093872070313 8.34271240234375 264.7177734375 5.459075927734375 C 250.2581481933594 2.500244140625 235.3755340576172 0.999969482421875 220.4832000732422 0.999969482421875 M 220.4832000732422 -3.0517578125e-05 C 342.252685546875 -3.0517578125e-05 440.9663696289063 98.71371459960938 440.9663696289063 220.4832000732422 C 440.9663696289063 342.252685546875 342.252685546875 440.9663696289063 220.4832000732422 440.9663696289063 C 98.71371459960938 440.9663696289063 -3.0517578125e-05 342.252685546875 -3.0517578125e-05 220.4832000732422 C -3.0517578125e-05 98.71371459960938 98.71371459960938 -3.0517578125e-05 220.4832000732422 -3.0517578125e-05 Z"
+								stroke="none"
+								fill="#707070"
+							/>
+						</g>
+					</g>
+				</svg>
+				<div id="skill-info" class="info-card">
+					<h3 id="skill-title">Name of Skill</h3>
+					<p id="skill-description">
+						This skill is very near and dear to me. I learned it at school in
+						this grade during this class and supplemented it with these books
+						and online resources. These projects listed above were used
+					</p>
+					<p id="skill-resources">
+						Links to books and resources: <br />
+						www.amazon.com/1 <br />
+						www.amazon.com/2 <br />
+						www.amazon.com/3
+					</p>
+				</div>
+			</section>
+			<section id="experience">
+				<h2 id="experience-title" class="section-title">My Experience</h2>
+				<div id="experience-flex-container">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="experience-info-card"
+						viewBox="0 0 386 503"
+					>
+						<g
+							id="Rectangle_24"
+							data-name="Rectangle 24"
+							fill="#456990"
+							stroke="#707070"
+							stroke-width="1"
+						>
+							<rect width="386" height="503" rx="67" stroke="none" />
+							<rect
+								x="0.5"
+								y="0.5"
+								width="385"
+								height="502"
+								rx="66.5"
+								fill="none"
+							/>
+						</g>
+						<text
+							id="Concurrent_EDA"
+							data-name="Concurrent EDA"
+							transform="translate(63 62)"
+							fill="#fefefe"
+							font-size="33"
+							font-family="Poppins-Medium, Poppins"
+							font-weight="500"
+						>
+							<tspan x="0" y="0">Concurrent EDA</tspan>
+						</text>
+						<text
+							id="Summer_of_2019"
+							data-name="Summer of 2019"
+							transform="translate(106 97)"
+							fill="#c8c7c7"
+							font-size="22"
+							font-family="Poppins-Regular, Poppins"
+						>
+							<tspan x="0" y="0">Summer of 2019</tspan>
+						</text>
+						<text
+							id="During_this_summer_I_worked_on_the_quote_generator_I_listed_above_and_a_web_scraper_to_gather_public_data_from_a_competing_company._In_this_process_I_learned_about_good_practices_and_software_design._I_also_furthered_my_knowledge_of_Qt_C_and_Python."
+							data-name="During this summer, I worked on the quote generator I listed above and a web scraper to gather public data from a competing company. In this process, I learned about good practices and software design. I also furthered my knowledge of Qt, C++, and Python."
+							transform="translate(22 138)"
+							fill="#fff"
+							font-size="13"
+							font-family="Poppins-Light, Poppins"
+							font-weight="300"
+						>
+							<tspan x="0" y="14">
+								During this summer, I worked on the quote generator
+							</tspan>
+							<tspan x="0" y="40">
+								I listed above and a web scraper to gather public
+							</tspan>
+							<tspan x="0" y="66">
+								data from a competing company. In this process, I
+							</tspan>
+							<tspan x="0" y="92">
+								learned about good practices and software design. I
+							</tspan>
+							<tspan x="0" y="118">
+								also furthered my knowledge of Qt, C++, and Python.
+							</tspan>
+						</text>
+					</svg>
+
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						class="experience-info-card"
+						viewBox="0 0 386 503"
+					>
+						<g
+							id="Rectangle_24"
+							data-name="Rectangle 24"
+							fill="#456990"
+							stroke="#707070"
+							stroke-width="1"
+						>
+							<rect width="386" height="503" rx="67" stroke="none" />
+							<rect
+								x="0.5"
+								y="0.5"
+								width="385"
+								height="502"
+								rx="66.5"
+								fill="none"
+							/>
+						</g>
+						<text
+							id="Concurrent_EDA"
+							data-name="Concurrent EDA"
+							transform="translate(63 62)"
+							fill="#fefefe"
+							font-size="33"
+							font-family="Poppins-Medium, Poppins"
+							font-weight="500"
+						>
+							<tspan x="0" y="0">Concurrent EDA</tspan>
+						</text>
+						<text
+							id="Summer_of_2020"
+							data-name="Summer of 2020"
+							transform="translate(106 97)"
+							fill="#c8c7c7"
+							font-size="22"
+							font-family="Poppins-Regular, Poppins"
+						>
+							<tspan x="0" y="0">Summer of 2020</tspan>
+						</text>
+						<text
+							id="During_this_summer_I_worked_on_a_blob_detection_algorithm_for_compressed_images_a_video_player_for_recording_and_playback_and_a_product_lookup_feature_for_their_website._I_learned_about_user_interface_design_web_development_and_front_end_back_end_sepa"
+							data-name="During this summer, I worked on a blob detection algorithm for compressed images, a video player for recording and playback, and a product lookup feature for their website. I learned about user interface design, web development, and front end back end sepa"
+							transform="translate(22 138)"
+							fill="#fff"
+							font-size="13"
+							font-family="Poppins-Light, Poppins"
+							font-weight="300"
+						>
+							<tspan x="0" y="14">
+								During this summer, I worked on a blob detection
+							</tspan>
+							<tspan x="0" y="40">
+								algorithm for compressed images, a video player for
+							</tspan>
+							<tspan x="0" y="66">
+								recording and playback, and a product lookup
+							</tspan>
+							<tspan x="0" y="92">
+								feature for their website. I learned about user
+							</tspan>
+							<tspan x="0" y="118">
+								interface design, web development, and front end
+							</tspan>
+							<tspan x="0" y="144">back end separation.</tspan>
+						</text>
+					</svg>
+				</div>
+			</section>
+			<section id="contact">
+				<h2 id="contact-title" class="section-title">Contact Me</h2>
+				<div id="contact-me-form-container" class="alt-info-card">
+					<form
+						id="contact-me-form"
+						action="https://getform.io/f/3c1d4fcf-19de-4b85-9324-7a2a1b6caa81"
+						method="POST"
+					>
+						<label for="name-input">Name:</label>
+						<br />
+						<input type="text" id="name-input" name="name" />
+						<br />
+						<label for="email-input">Email:</label>
+						<br />
+						<input type="email" id="email-input" name="email" />
+						<br />
+						<label for="message-input">Message:</label>
+						<br />
+						<textarea id="message-input" rows="5" name="message"></textarea>
+					</form>
+				</div>
+				<div id="submit-form-button-container" class="expanding-button">
+					<svg
+						id="submit-form-button"
+						xmlns="http://www.w3.org/2000/svg"
+						viewBox="0 0 336.172 151.602"
+						onmouseenter="expandSubmitFormButton()"
+						onmouseleave="shrinkSubmitFormButton()"
+						onclick="submitForm(); pressSubmitFormButton(); releaseSubmitFormButton();"
+						style="cursor: pointer"
+					>
+						<g transform="translate(-791.914 -763.723)">
+							<rect
+								id="submit-form-button-rect"
+								data-name="Rectangle 15"
+								width="331.172"
+								height="146.602"
+								rx="68"
+								transform="translate(794.414 766.223)"
+								fill="#456990"
+								stroke="#456990"
+								stroke-width="5"
+							/>
+							<text
+								id="submit-form-button-text"
+								data-name="Submit!"
+								transform="translate(876 854)"
+								fill="#fff"
+								font-size="40"
+								font-family="Poppins-SemiBold, Poppins"
+								font-weight="600"
+								letter-spacing="0.032em"
+							>
+								<tspan x="0" y="0">Submit!</tspan>
+							</text>
+						</g>
+					</svg>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>
