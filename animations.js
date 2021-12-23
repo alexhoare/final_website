@@ -1,10 +1,11 @@
-gsap.registerPlugin(ScrollTrigger, TextPlugin, MorphSVGPlugin);
+gsap.registerPlugin(ScrollTrigger, TextPlugin, MorphSVGPlugin, CSSPlugin);
 
 window.onload = function () {
 	MorphSVGPlugin.convertToPath("rect");
 	animateTimeline();
 	animateSkillWheel();
 	cycleThroughDescriptors();
+	bobScrollDownArrow();
 };
 
 let descriptors = [
@@ -12,7 +13,6 @@ let descriptors = [
 	"Software Engineer",
 	"Coder",
 	"Web Developer",
-	"Nittany Lion",
 	"Chess Enthusiast",
 ];
 
@@ -33,6 +33,23 @@ function cycleThroughDescriptors() {
 		bigTL.add(smallTL);
 		descriptorIndex++;
 	}
+}
+
+function bobScrollDownArrow() {
+	/* adjust X position of arrow because we can't in CSS */
+	gsap.to("#scroll-down-arrow", {
+		duration: 0,
+		x: 40,
+	});
+
+	let bobTL = gsap.timeline({ repeat: -1, repeatDelay: 0 });
+	let event = gsap.timeline({ repeat: 1, yoyo: true });
+	event.to("#scroll-down-arrow", {
+		duration: 0.8,
+		y: -10,
+		ease: "sine.inOut",
+	});
+	bobTL.add(event);
 }
 
 function animateTimeline() {
@@ -61,7 +78,7 @@ function animateTimeline() {
 
 function animateSkillWheel() {
 	gsap.to("#skill-wheel", {
-		rotation: (7.0 / 8.0) * 360,
+		rotation: 360,
 		ease: "none",
 		scrollTrigger: {
 			trigger: "#experience",
@@ -76,7 +93,7 @@ function animateSkillWheel() {
 			},
 			pin: "#skills",
 			snap: {
-				snapTo: 1.0 / 7.0,
+				snapTo: 0.125,
 				ease: "power4",
 				duration: 0.5,
 			},
@@ -154,7 +171,7 @@ function expandSubmitFormButton() {
 	let animationDuration = 0.2;
 	console.log("expanding submit form button");
 	gsap.to("#submit-form-button-container", {
-		scale: 1.2,
+		y: -10,
 		duration: animationDuration,
 	});
 	gsap.to("#submit-form-button-rect", {
@@ -171,7 +188,6 @@ function shrinkSubmitFormButton() {
 	let animationDuration = 0.2;
 	console.log("shrinking submit form button");
 	gsap.to("#submit-form-button-container", {
-		scale: 1.0,
 		y: 0,
 		duration: animationDuration,
 	});
@@ -187,9 +203,10 @@ function shrinkSubmitFormButton() {
 function expandContactMe() {
 	let animationDuration = 0.2;
 	console.log("expanding contact me button");
+	buttonWidth = document.getElementById("#contact-me-button-container");
+
 	gsap.to("#contact-me-button-container", {
-		scale: 1.2,
-		y: 50,
+		y: -10,
 		duration: animationDuration,
 	});
 	gsap.to("#contact-me-button-rect", {
@@ -206,7 +223,6 @@ function shrinkContactMe() {
 	let animationDuration = 0.2;
 	console.log("shrinking contact me button");
 	gsap.to("#contact-me-button-container", {
-		scale: 1.0,
 		y: 0,
 		duration: animationDuration,
 	});
@@ -253,45 +269,11 @@ function deilluminateMenuBar(barNumber) {
 }
 
 function expandMenuButton() {
-	menuButtonTimeline = gsap.timeline();
-
-	menuButtonTimeline.to("#containing-rect", {
+	gsap.to("#containing-rect", {
 		morphSVG: "#expanded-containing-rect",
 		duration: 0.2,
 	});
-	menuButtonTimeline.to("#menu-button", {
-		x: -182,
-		duration: 0.2,
-		delay: -0.2,
-	});
-	let options = [
-		"#menu-projects",
-		"#menu-skills",
-		"#menu-experience",
-		"#menu-contact",
-	];
-	for (let i = 1; i <= 4; i++) {
-		let newY = "" + i * 70;
-		menuButtonTimeline.to("#bar" + i, {
-			y: "+=" + newY,
-			duration: 0.1,
-			// delay: -0.5 * (i - 1),
-		});
-	}
-	for (let i = 1; i <= 4; i++) {
-		menuButtonTimeline.to("#bar" + i, {
-			morphSVG: options[i - 1],
-			duration: 0.2,
-		});
-	}
-}
-
-function shrinkMenuButton() {
-	menuButtonTimeline.to("#containing-rect", {
-		morphSVG: "#containing-rect",
-		duration: 0.2,
-	});
-	menuButtonTimeline.to("#menu-button", {
+	gsap.globalTimeline.to("#menu-button", {
 		x: 0,
 		duration: 0.2,
 		delay: -0.2,
@@ -303,16 +285,51 @@ function shrinkMenuButton() {
 		"#menu-contact",
 	];
 	for (let i = 1; i <= 4; i++) {
-		menuButtonTimeline.to("#bar" + i, {
+		let newY = "" + i * 70;
+		gsap.globalTimeline.to("#bar" + i, {
+			y: "+=" + newY,
+			duration: 0.1,
+			// delay: -0.5 * (i - 1),
+		});
+	}
+	for (let i = 1; i <= 4; i++) {
+		gsap.globalTimeline.to("#bar" + i, {
+			morphSVG: options[i - 1],
+			// transform: "translateY(100px)",
+			duration: 0.2,
+			// delay: 0.1 * i,
+		});
+	}
+}
+
+function shrinkMenuButton() {
+	gsap.to("#containing-rect", {
+		morphSVG: "#containing-rect",
+		duration: 0.2,
+	});
+	gsap.globalTimeline.to("#menu-button", {
+		x: 179,
+		duration: 0.2,
+		delay: -0.2,
+	});
+	let options = [
+		"#menu-projects",
+		"#menu-skills",
+		"#menu-experience",
+		"#menu-contact",
+	];
+	for (let i = 1; i <= 4; i++) {
+		gsap.globalTimeline.to("#bar" + i, {
 			morphSVG: "#bar" + i,
 			duration: 0.1,
 		});
 	}
 	for (let i = 1; i <= 4; i++) {
 		let newY = "" + i * 70;
-		menuButtonTimeline.to("#bar" + i, {
+		gsap.globalTimeline.to("#bar" + i, {
 			y: "-=" + newY,
 			duration: 0.05,
+			// delay: 0.1 * i,
 		});
 	}
 }

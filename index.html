@@ -5,6 +5,7 @@
 		<meta name="viewport" content="width=device-width" />
 		<title>Alex Hoare</title>
 		<link href="styles.css" rel="stylesheet" type="text/css" />
+		<link href="./stylesheets/intro.css" rel="stylesheet" type="text/css" />
 
 		<!-- Include GSAP Core and Plugins -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
@@ -145,7 +146,9 @@
 				<!-- <canvas id="shapeCanvas" onload="drawShapes();"></canvas> -->
 			</div>
 			<section id="intro">
-				<h1 id="name">Alex<br />Hoare</h1>
+				<div id="name">
+					<h1>Alex<br />Hoare</h1>
+				</div>
 				<ul id="descriptors">
 					<li>I'm a...</li>
 					<li id="current-descriptor"></li>
@@ -161,10 +164,7 @@
 							onmouseenter="expandContactMe()"
 							onmouseleave="shrinkContactMe()"
 						>
-							<g
-								id="contact-me-button"
-								transform="translate(-791.914 -763.723)"
-							>
+							<g transform="translate(-791.914 -763.723)">
 								<rect
 									id="contact-me-button-rect"
 									data-name="Rectangle 15"
@@ -192,6 +192,31 @@
 						</svg>
 					</a>
 				</div>
+				<h5 id="scroll-down">(scroll down)</h5>
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="15"
+					height="15"
+					viewBox="0 0 50 50"
+					id="scroll-down-arrow"
+				>
+					<g
+						id="Polygon_1"
+						data-name="Polygon 1"
+						transform="translate(50 50) rotate(180)"
+						fill="#424b54"
+					>
+						<path
+							d="M 49.19098281860352 49.5 L 0.8090147376060486 49.5 L 24.99998092651367 1.118029952049255 L 49.19098281860352 49.5 Z"
+							stroke="none"
+						/>
+						<path
+							d="M 24.99998092651367 2.236068725585938 L 1.618034362792969 49 L 48.38196563720703 49 L 24.99998092651367 2.236068725585938 M 24.99998092651367 0 L 50 50 L 0 50 L 24.99998092651367 0 Z"
+							stroke="none"
+							fill="#424b54"
+						/>
+					</g>
+				</svg>
 			</section>
 			<section id="projects">
 				<div id="projects-flex-container">

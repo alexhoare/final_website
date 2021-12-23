@@ -1,0 +1,214 @@
+<g transform="translate(-62 -635)">
+								<rect
+									id="Rectangle_19"
+									data-name="Rectangle 19"
+									width="16"
+									height="106.664"
+									rx="5"
+									transform="translate(62 778.55)"
+									fill="#ff7277"
+								/>
+								<defs>
+									<pattern
+										id="pig-latin-pattern"
+										preserveAspectRatio="none"
+										width="100%"
+										height="100%"
+										viewBox="0 0 350 263"
+									>
+										<image
+											width="350"
+											height="263"
+											xlink:href="./project_images/pig_latin.png"
+										/>
+									</pattern>
+									<pattern
+										id="n-queens-pattern"
+										preserveAspectRatio="none"
+										width="100%"
+										height="100%"
+										viewBox="0 0 350 263"
+									>
+										<image
+											width="350"
+											height="263"
+											xlink:href="./project_images/n_queens.png"
+										/>
+									</pattern>
+									<pattern
+										id="sudoku-solver-pattern"
+										preserveAspectRatio="none"
+										width="100%"
+										height="100%"
+										viewBox="0 0 350 263"
+									>
+										<image
+											width="350"
+											height="263"
+											xlink:href="./project_images/sudoku_solver.png"
+										/>
+									</pattern>
+									<pattern
+										id="snake-pattern"
+										preserveAspectRatio="none"
+										width="100%"
+										height="100%"
+										viewBox="0 0 350 263"
+									>
+										<image
+											width="350"
+											height="263"
+											xlink:href="./project_images/snake_v1.jpg"
+										/>
+									</pattern>
+									<pattern
+										id="snake-v2-pattern"
+										preserveAspectRatio="none"
+										width="100%"
+										height="100%"
+										viewBox="0 0 350 263"
+									>
+										<image
+											width="350"
+											height="263"
+											xlink:href="./project_images/snake_v2.png"
+										/>
+									</pattern>
+									<pattern
+										id="sudoku-solver-pattern"
+										preserveAspectRatio="none"
+										width="100%"
+										height="100%"
+										viewBox="0 0 350 263"
+									>
+										<image
+											width="350"
+											height="263"
+											xlink:href="./project_images/sudoku_solver.png"
+										/>
+									</pattern>
+									<pattern
+										id="quote-generator-pattern"
+										preserveAspectRatio="none"
+										width="100%"
+										height="100%"
+										viewBox="0 0 350 263"
+									>
+										<image
+											width="350"
+											height="263"
+											xlink:href="./project_images/quote_generator.png"
+										/>
+									</pattern>
+									<pattern
+										id="gift-wrapping-simulator-pattern"
+										preserveAspectRatio="none"
+										width="100%"
+										height="100%"
+										viewBox="0 0 350 263"
+									>
+										<image
+											width="350"
+											height="263"
+											xlink:href="./project_images/gift_wrapping_simulator.png"
+										/>
+									</pattern>
+									<pattern
+										id="rotoscoper-pattern"
+										preserveAspectRatio="none"
+										width="100%"
+										height="100%"
+										viewBox="0 0 350 263"
+									>
+										<image
+											width="350"
+											height="263"
+											xlink:href="./project_images/rotoscoper.png"
+										/>
+									</pattern>
+									<pattern
+										id="blob-detection-pattern"
+										preserveAspectRatio="none"
+										width="100%"
+										height="100%"
+										viewBox="0 0 350 263"
+									>
+										<image
+											width="350"
+											height="263"
+											xlink:href="./project_images/blob_detection.jpg"
+										/>
+									</pattern>
+									<pattern
+										id="mario-kart-pattern"
+										preserveAspectRatio="none"
+										width="100%"
+										height="100%"
+										viewBox="0 0 350 263"
+									>
+										<image
+											width="350"
+											height="263"
+											xlink:href="./project_images/mario_kart.jpg"
+										/>
+									</pattern>
+									<pattern
+										id="face-doodle-pattern"
+										preserveAspectRatio="none"
+										width="100%"
+										height="100%"
+										viewBox="0 0 350 263"
+									>
+										<image
+											width="350"
+											height="263"
+											xlink:href="./project_images/face_doodle.png"
+										/>
+									</pattern>
+									<pattern
+										id="this-website-pattern"
+										preserveAspectRatio="none"
+										width="100%"
+										height="100%"
+										viewBox="0 0 350 263"
+									>
+										<image
+											width="350"
+											height="263"
+											xlink:href="./project_images/this_website.png"
+										/>
+									</pattern>
+								</defs>
+								<image
+									id="Rectangle_20"
+									data-name="Rectangle 20"
+									width="198.191"
+									transform="translate(87 671.122)"
+									fill="#c4c4c4"
+									xlink:href="./project_images/pig_latin.png"
+									border-style="solid"
+									border-width="4px"
+									border-color="#00FF00"
+								/>
+
+								<text
+									id="Pig_Latin_Translator"
+									data-name="Pig Latin Translator"
+									transform="translate(87 658)"
+									fill="#424b54"
+									font-size="21"
+									font-family="Poppins-Regular, Poppins"
+								>
+									<tspan x="0" y="0">Pig Latin Translator</tspan>
+								</text>
+								<g
+									id="pig_latin"
+									transform="translate(87 671)"
+									stroke="#707070"
+									stroke-width="4"
+									fill="url(#pig-latin-pattern)"
+								>
+									<rect width="198" height="149" stroke="none" />
+									<rect x="2" y="2" width="194" height="145" fill="none" />
+								</g>
+							</g>
